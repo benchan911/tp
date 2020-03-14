@@ -46,7 +46,7 @@ public class Attendance {
      *
      * @return The name of the module.
      */
-    public String getEventName() {
+    public String getEvent() {
         return eventName;
     }
 
@@ -55,7 +55,7 @@ public class Attendance {
      *
      * @return The name of student.
      */
-    public String getStudentName() {
+    public String getStudent() {
         return studentName;
     }
 
