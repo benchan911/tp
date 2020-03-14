@@ -51,11 +51,13 @@ public class UI {
      * This prints the welcome message and set username for the application.
      */
     public static void setUserName() {
-        String logo = " ____        _\n"
-                + "|  _ \\ _   _| | _____\n"
-                + "| | | | | | | |/ / _ \\\n"
-                + "| |_| | |_| |   <  __/\n"
-                + "|____/ \\__,_|_|\\_\\___|\n";
+        String logo = "\n"
+                + " ______        _____          _______   "
+                + "|   __  \\    /  _  \\      //  _____|| "
+                + "|  ||__| ||  /  / \\ \\    /   /        "
+                + "|   ____//  /   ___   \\   |  ||        "
+                + "|  |       |   /   \\   |  \\   \\___   "
+                + "|__|       |__/     \\__|   \\_______|| ";
         display("Hello from\n" + logo);
         display("What is your name?");
         userName = in.nextLine();
