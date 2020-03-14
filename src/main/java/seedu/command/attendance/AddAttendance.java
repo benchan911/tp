@@ -24,10 +24,8 @@ public class AddAttendance extends Command {
     public void addToList() {
         String eventName = attendance.getEvent();
         AttendanceList attendanceList = new AttendanceList();
-        //TODO: change this list to the performance list under event input
         attendanceList.addToList(attendance, eventName);
     }
-
 
     @Override
     public void execute() {

@@ -31,12 +31,12 @@ public class AttendanceList {
     public static void deleteAttendance(Attendance attendance) {
         boolean hasDeleted = false;
         if (numberOfAttendee > 0) {
-            for (Attendance p : attendanceList) {
-                if (p != null
-                        && attendance.getDescription().equals(p.getDescription())
-                        && attendance.getEvent().equals(p.getEvent())
-                        && attendance.getStudent().equals(p.getStudent())) {
-                    attendanceList.remove(p);
+            for (Attendance a : attendanceList) {
+                if (a != null
+                        && attendance.getDescription().equals(a.getDescription())
+                        && attendance.getEvent().equals(a.getEvent())
+                        && attendance.getStudent().equals(a.getStudent())) {
+                    attendanceList.remove(a);
                     hasDeleted = true;
                 }
             }
