@@ -1,9 +1,17 @@
 package seedu.command.performance;
 
 import seedu.command.Command;
+<<<<<<< HEAD:src/main/java/seedu/command/performance/ViewStudentResultCommand.java
 import seedu.exception.PerformanceStudentListException;
 import seedu.module.performance.Performance;
 import seedu.module.performance.PerformanceList;
+=======
+import seedu.exception.DukeException;
+import seedu.performance.Performance;
+import seedu.performance.PerformanceList;
+import seedu.storage.Storage;
+import seedu.ui.UI;
+>>>>>>> master:src/main/java/seedu/command/performance/ViewStudentResult.java
 
 import java.util.List;
 
@@ -20,7 +28,7 @@ public class ViewStudentResultCommand extends Command {
         String[] instructions = userInput.split(" ", 2);
         name = instructions[1];
         performances = new PerformanceList().getPerformanceList();
-        studentPerformanceList();
+
     }
 
     /**
@@ -28,18 +36,26 @@ public class ViewStudentResultCommand extends Command {
      * from the Performance list, and print the list in the format of
      * [module][assignment]result.
      */
-    public void studentPerformanceList() {
+    public void printStudentPerformanceList() {
         int size = performances.size();
         if (size == 0) {
             System.out.println("empty");
         } else {
             int i = 1;
             for (Performance performance : performances) {
-                if (performance.nameOfStudent.equals(name)) {
+                if (performance.studentName.equals(name)) {
                     System.out.println(i + performance.formatForStudentList());
                     i++;
                 }
             }
         }
     }
+<<<<<<< HEAD:src/main/java/seedu/command/performance/ViewStudentResultCommand.java
+=======
+
+    @Override
+    public void execute() {
+        printStudentPerformanceList();
+    }
+>>>>>>> master:src/main/java/seedu/command/performance/ViewStudentResult.java
 }

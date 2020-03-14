@@ -3,9 +3,12 @@ package seedu.parser;
 import seedu.module.performance.PerformanceList;
 import seedu.module.performance.Performance;
 
+<<<<<<< HEAD
 import java.util.Arrays;
 import java.util.List;
 
+=======
+>>>>>>> master
 public class Parser {
     public static List<Performance> performances;
 
@@ -27,9 +30,12 @@ public class Parser {
     public static String getCommandWord(String userInput) {
         return userInput.strip().split(" ")[0];
     }
+<<<<<<< HEAD
 
     public static String[] performanceDataToParse(String userInput) {
         String[] instructions = userInput.split(" ",20);
         return Arrays.copyOfRange(instructions, 1, instructions.length);
     }
+=======
+>>>>>>> master
 }

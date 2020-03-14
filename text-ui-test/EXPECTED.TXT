@@ -6,4 +6,10 @@ Hello from
 |____/ \__,_|_|\_\___|
 
 What is your name?
+<<<<<<< HEAD
 Hello James Gosling
+=======
+Hello James Gosling. Welcome to your personal Professor Assistant Console.
+seedu.exception.DukeException: No parameters provided
+Bye, see you again!
+>>>>>>> master
