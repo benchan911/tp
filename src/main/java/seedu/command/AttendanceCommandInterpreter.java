@@ -23,12 +23,12 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
         String commandType = getFirstWord(commandDescription);
         String commandParameters = getSubsequentWords(commandDescription);
         switch (commandType) {
-            case "add":
-                return new AddAttendance(commandParameters);
-            case "delete":
-                return new DeleteAttendance(commandParameters);
-            default:
-                throw new DukeException("Attendance: Unknown command.");
+        case "add":
+            return new AddAttendance(commandParameters);
+        case "delete":
+            return new DeleteAttendance(commandParameters);
+        default:
+            throw new DukeException("Attendance: Unknown command.");
         }
     }
 }
