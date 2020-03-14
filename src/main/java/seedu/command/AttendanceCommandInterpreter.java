@@ -3,6 +3,7 @@ package seedu.command;
 import seedu.attendance.AttendanceList;
 import seedu.command.attendance.AddAttendance;
 import seedu.command.attendance.DeleteAttendance;
+import seedu.command.attendance.ListAttendance;
 import seedu.event.EventList;
 import seedu.exception.DukeException;
 

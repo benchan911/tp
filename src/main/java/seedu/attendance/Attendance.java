@@ -82,4 +82,7 @@ public class Attendance {
         return eventName + " " + studentName + " " + description + " " + hasAttended;
     }
 
+    public String formatForStudentList() {
+        return eventName + " " + studentName + " " + description + " " + hasAttended;
+    }
 }

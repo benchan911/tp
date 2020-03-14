@@ -31,5 +31,6 @@ public class AddAttendance extends Command {
 
     @Override
     public void execute() {
+        addToList();
     }
 }
