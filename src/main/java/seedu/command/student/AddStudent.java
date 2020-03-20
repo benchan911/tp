@@ -34,7 +34,7 @@ public class AddStudent extends Command {
                 System.out.println("Please enter a student Name. If you are finished, enter done");
                 ui.readUserInput();
                 studentName = ui.getUserInput();
-                if (studentName.contains("done")){
+                if (studentName.contains("done")) {
                     break;
                 }
                 studentList.addToList(studentName);

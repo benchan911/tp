@@ -2,6 +2,7 @@ package seedu;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class StudentList {
     public ArrayList<String> studentList;
@@ -21,6 +22,10 @@ public class StudentList {
         return studentList;
     }
 
+    public String getListName() {
+        return listName;
+    }
+
 
     public void sortAscending() {
         Collections.sort(studentList);
@@ -29,7 +34,7 @@ public class StudentList {
     public void showList() {
         System.out.println(listName);
         int index = 1;
-        for (String name : studentList){
+        for (String name : studentList) {
             System.out.print(index + ". ");
             System.out.println(name);
             index++;

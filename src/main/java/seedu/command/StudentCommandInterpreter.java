@@ -22,18 +22,18 @@ public class StudentCommandInterpreter extends CommandInterpreter {
         String commandType = getFirstWord(commandDescription);
         String commandParameters = getSubsequentWords(commandDescription);
         switch (commandType) {
-            case "add":
-                return new AddStudent(studentList);
-            case "list":
-                return new ListStudent();
-            case "delete":
-                try {
-                    return new DeleteStudent(Integer.parseInt(commandParameters));
-                } catch (Exception e) {
-                    throw new DukeException(e.getMessage());
-                }
-            default:
-                throw new DukeException("Performance: Unknown command.");
+        case "add":
+            return new AddStudent(studentList);
+        case "list":
+            return new ListStudent();
+        case "delete":
+            try {
+                return new DeleteStudent(Integer.parseInt(commandParameters));
+            } catch (Exception e) {
+                throw new DukeException(e.getMessage());
+            }
+        default:
+            throw new DukeException("Performance: Unknown command.");
         }
     }
 
