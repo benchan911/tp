@@ -24,6 +24,7 @@ public class AddStudent extends Command {
 
     @Override
     public void execute() throws DukeException {
+        //todo make more OOP
         System.out.println("What is the name of your list?");
         ui.readUserInput();
         listName = ui.getUserInput();

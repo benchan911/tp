@@ -2,7 +2,9 @@ package seedu.command;
 
 import seedu.StudentList;
 import seedu.command.student.AddStudent;
+import seedu.command.student.DeleteStudent;
 import seedu.command.student.ListStudent;
+import seedu.duke.Duke;
 import seedu.event.EventList;
 import seedu.exception.DukeException;
 import seedu.ui.UI;
@@ -24,6 +26,12 @@ public class StudentCommandInterpreter extends CommandInterpreter {
                 return new AddStudent(studentList);
             case "list":
                 return new ListStudent();
+            case "delete":
+                try {
+                    return new DeleteStudent(Integer.parseInt(commandParameters));
+                } catch (Exception e) {
+                    throw new DukeException(e.getMessage());
+                }
             default:
                 throw new DukeException("Performance: Unknown command.");
         }
