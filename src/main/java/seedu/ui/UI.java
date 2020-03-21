@@ -1,12 +1,16 @@
 package seedu.ui;
 
+import seedu.StudentList;
 import seedu.attendance.Attendance;
 import seedu.event.Event;
+import seedu.exception.DukeException;
 import seedu.performance.Performance;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.stream.Stream;
+
+import static seedu.duke.Duke.studentListCollection;
 
 public class UI {
     private static Scanner in;
@@ -262,5 +266,41 @@ public class UI {
         System.out.println("Please key in the name of event that "
                 + "you wish to add the student's performance.");
         return in.nextLine();
+    }
+
+    public void displayStudentList(StudentList studentList, String listName) {
+        System.out.println("Student List created, named : " + listName);
+        studentList.showList();
+    }
+
+    public void addStudent(StudentList studentList) {
+        String studentName;
+        do {
+            System.out.println("Please enter a student Name. If you are finished, enter done");
+            studentName = in.nextLine();
+            if (studentName.contains("done")) {
+                break;
+            }
+            studentList.addToList(studentName);
+        } while (!studentName.equals("done"));
+    }
+
+    public String getListName() {
+        System.out.println("What is the name of your list?");
+        return in.nextLine();
+    }
+
+    public void displayStudentListCollection() throws DukeException {
+        int index = 1;
+        try {
+            for (StudentList studentList : studentListCollection) {
+                System.out.print("[" + index + "] ");
+                studentList.showList();
+                System.out.println("--------------");
+                index++;
+            }
+        } catch (Exception e) {
+            throw new DukeException(e.getMessage());
+        }
     }
 }

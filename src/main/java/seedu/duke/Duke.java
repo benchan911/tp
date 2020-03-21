@@ -23,6 +23,7 @@ public class Duke {
     protected CommandInterpreter interpreter;
     protected EventList eventList;
     public static ArrayList<StudentList> studentListCollection;
+    protected int maxListSize = 100;
 
     public Duke() {
         setupLogger();
@@ -31,7 +32,7 @@ public class Duke {
         eventList = new EventList();  //TODO: new Storage().load()
 
         interpreter = new CommandInterpreter(eventList);
-        studentListCollection = new ArrayList();
+        studentListCollection = new ArrayList<>(maxListSize);
     }
 
     private void setupLogger() {

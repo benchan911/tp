@@ -22,28 +22,16 @@ public class AddStudent extends Command {
         this.newStudentList = newStudentList;
     }
 
+    protected void addToList() throws DukeException {
+        listName = ui.getListName();
+        studentList = new StudentList(listName);
+        ui.addStudent(studentList);
+        ui.displayStudentList(studentList,listName);
+        studentListCollection.add(studentList);
+    }
+
     @Override
     public void execute() throws DukeException {
-        //todo make more OOP
-        System.out.println("What is the name of your list?");
-        ui.readUserInput();
-        listName = ui.getUserInput();
-        studentList = new StudentList(listName);
-        try {
-            do {
-                System.out.println("Please enter a student Name. If you are finished, enter done");
-                ui.readUserInput();
-                studentName = ui.getUserInput();
-                if (studentName.contains("done")) {
-                    break;
-                }
-                studentList.addToList(studentName);
-            } while (!studentName.equals("done"));
-        } catch (Exception e) {
-            throw new DukeException(e.getMessage());
-        }
-        System.out.println("Student List created, named -- " + listName);
-        studentList.showList();
-        studentListCollection.add(studentList);
+        addToList();
     }
 }
