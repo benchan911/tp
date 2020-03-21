@@ -18,7 +18,7 @@ public class DeleteStudent extends Command {
     @Override
     public void execute() throws DukeException {
         try {
-            studentListCollection.remove(index-1);
+            studentListCollection.remove(index - 1);
         } catch (Exception e) {
             throw new DukeException(e.getMessage());
         }
