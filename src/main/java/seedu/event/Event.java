@@ -127,4 +127,8 @@ public class Event {
         }
         return "Event: " + getName() + ", time: " + getDatetime() + ", venue: " + getVenue();
     }
+
+    public AttendanceList getAttendanceList() {
+        return attendanceList;
+    }
 }

@@ -53,7 +53,7 @@ public class PerformanceList {
         int i = 1;
         ui.printHeaderOfThree("Index", "Name of Student", "Result");
         for (Performance performance : performanceList) {
-            ui.printBodyOfThree(Integer.toString(i), performance.studentName, performance.getResult());
+            ui.printBodyOfThree(i, performance.studentName, performance.getResult());
             i++;
         }
     }
