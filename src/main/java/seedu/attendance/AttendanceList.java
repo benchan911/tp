@@ -15,13 +15,14 @@ public class AttendanceList {
         attendanceList = new ArrayList<>();
     }
 
-    public ArrayList<Attendance> getPerformanceList() {
+    public ArrayList<Attendance> getAttendanceList() {
         return attendanceList;
     }
 
     public void addToList(Attendance attendance, String eventName) {
         attendanceList.add(attendance);
-        UI.addPerformanceMessage(attendance.studentName, eventName);
+        UI.addAttendanceMessage(attendance.studentName, eventName);
+        System.out.println("Please insert the next student");
     }
 
     public void printList() throws DukeException {

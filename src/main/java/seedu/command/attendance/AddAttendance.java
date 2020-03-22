@@ -16,9 +16,6 @@ public class AddAttendance extends Command {
     boolean isByNameList;
     String eventName;
 
-    Attendance attendance;
-    public String commandParameters;
-
     public AddAttendance(AttendanceList attendances, String eventName) {
         this.isByNameList = false;
         this.attendances = attendances;
@@ -30,6 +27,13 @@ public class AddAttendance extends Command {
      */
 
     public void addToList() throws DukeException {
+        System.out.println("By existing nameList? [Y/N] ");
+        String reply = ui.getStringInput();
+        if (reply.contains("Y")) {
+            isByNameList = true;
+        } else {
+            isByNameList = false;
+        }
         if (isByNameList) {
             ArrayList<String> studentNameList = new ArrayList<>();
             //todo: add a list of student list, and let user select a student list to be used.
@@ -49,7 +53,7 @@ public class AddAttendance extends Command {
                 studentNumber++;
             } while (!parameter.equals("done"));
             System.out.println("You have successfully added "
-                    + studentNumber + " result(s) to the attendance list.");
+                    + studentNumber + " to the attendance list.");
         }
     }
 
