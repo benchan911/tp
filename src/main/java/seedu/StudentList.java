@@ -3,7 +3,11 @@ package seedu;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Class representing a studentList.
+ */
 public class StudentList {
+
     public ArrayList<String> studentList;
     public String listName;
     public String studentName;
@@ -13,23 +17,37 @@ public class StudentList {
         studentList = new ArrayList<String>();
     }
 
+    /**
+     * Adds a new student name to studentList.
+     * @param studentName The name of the student.
+     */
     public void addToList(String studentName) {
         studentList.add(studentName);
     }
 
+    /**
+     * Retrieves the existing studentList.
+     * @return studentList
+     */
     public ArrayList<String> getStudentList() {
         return studentList;
     }
 
+    /**
+     * Retrieves the listName.
+     * @return listName
+     */
     public String getListName() {
         return listName;
     }
-
 
     public void sortAscending() {
         Collections.sort(studentList);
     }
 
+    /**
+     * Display the existing student names in the studentList.
+     */
     public void showList() {
         System.out.println(listName);
         int index = 1;

@@ -129,6 +129,12 @@ public class UI {
         return in.nextLine();
     }
 
+    public String getAttendanceStatusOfStudent(String studentName) {
+        System.out.println("Please key in the attendance status for student " + studentName + "[Y/N]");
+        return in.nextLine();
+    }
+
+
     public String getPerformanceParameter() {
         System.out.println("Please key in student name and result in the following format:");
         System.out.println("n/Student_Name r/result. If you are finished, enter done.");
@@ -241,5 +247,15 @@ public class UI {
     }
 
     public void printStudentListHelp() {
+        System.out.print("To create a new studentList for future events, input:\n  "
+                + "student add\n"
+                + "and follow step by step instructions.\n\n");
+        System.out.print("To delete an existing studentList, input:\n  "
+                + "student delete\n"
+                + "and follow step by step instructions.\n\n");
+    }
+
+    public void readIndexPrompt() {
+        System.out.print("Please state the index of the studentList that you wish to import");
     }
 }

@@ -30,6 +30,7 @@ public class DisplayList extends UI {
     }
 
     public void printStudentListCollection() throws DukeException {
+        System.out.println("Updated Collection:");
         int index = 1;
         try {
             for (StudentList studentList : studentListCollection) {

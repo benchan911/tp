@@ -2,8 +2,8 @@ package seedu.command.interpreter;
 
 import seedu.attendance.AttendanceList;
 import seedu.command.Command;
-import seedu.command.attendance.AddAttendance;
-import seedu.command.attendance.ListAttendance;
+import seedu.command.attendance.AddAttendanceList;
+import seedu.command.attendance.ViewAttendanceList;
 import seedu.event.EventList;
 import seedu.exception.DukeException;
 import seedu.ui.UI;
@@ -65,9 +65,9 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
         assert commandType == "" : "UnknownParameter";
         switch (commandType) {
         case "add":
-            return new AddAttendance(attendances, eventName);
+            return new AddAttendanceList(attendances, eventName);
         case "list":
-            return new ListAttendance(attendances);
+            return new ViewAttendanceList(attendances);
         default:
             throw new DukeException("Attendance: Unknown command.");
         }

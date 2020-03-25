@@ -54,7 +54,6 @@ public class Duke {
     public void run() {
         ui.setUserName();
         Command command = null;
-
         do {
             ui.readUserInput();
             try {
@@ -65,7 +64,6 @@ public class Duke {
                 System.out.println(m.getMessage());
             }
         } while (isNotBye(command));
-
         ui.close();
     }
 

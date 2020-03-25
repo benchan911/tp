@@ -2,9 +2,9 @@ package seedu.command.interpreter;
 
 import seedu.StudentList;
 import seedu.command.Command;
-import seedu.command.student.AddStudent;
-import seedu.command.student.DeleteStudent;
-import seedu.command.student.ListStudent;
+import seedu.command.student.AddStudentList;
+import seedu.command.student.DeleteStudentList;
+import seedu.command.student.ViewStudentList;
 import seedu.event.EventList;
 import seedu.exception.DukeException;
 import seedu.ui.UI;
@@ -23,12 +23,12 @@ public class StudentCommandInterpreter extends CommandInterpreter {
         String commandParameters = getSubsequentWords(commandDescription);
         switch (commandType) {
         case "add":
-            return new AddStudent(studentList);
+            return new AddStudentList(studentList);
         case "list":
-            return new ListStudent();
+            return new ViewStudentList();
         case "delete":
             try {
-                return new DeleteStudent(Integer.parseInt(commandParameters));
+                return new DeleteStudentList(Integer.parseInt(commandParameters));
             } catch (Exception e) {
                 throw new DukeException(e.getMessage());
             }

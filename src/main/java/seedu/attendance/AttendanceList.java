@@ -11,18 +11,14 @@ import java.util.ArrayList;
  */
 public class AttendanceList {
 
-    public static ArrayList<Attendance> attendanceList;
-    UI ui;
-    DisplayTable displayTable;
+    protected ArrayList<Attendance> attendanceList;
+    protected UI ui;
+    protected DisplayTable displayTable;
 
     public AttendanceList() {
         this.ui = new UI();
         this.displayTable = new DisplayTable();
         attendanceList = new ArrayList<>();
-    }
-
-    public ArrayList<Attendance> getAttendanceList() {
-        return attendanceList;
     }
 
     public void addToList(Attendance attendance, String eventName) {

@@ -7,7 +7,7 @@ import seedu.ui.DisplayList;
 /**
  * Class representing a student related command to list all studentList in studentListCollection.
  */
-public class ListStudent extends Command {
+public class ViewStudentList extends Command {
 
     protected DisplayList displayList = new DisplayList();
 
