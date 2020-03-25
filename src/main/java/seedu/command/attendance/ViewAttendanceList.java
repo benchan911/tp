@@ -5,9 +5,13 @@ import seedu.command.Command;
 import seedu.exception.DukeException;
 import seedu.ui.UI;
 
+/**
+ * Class representing an attendance related command to List an attendanceList of a specific event.
+ */
 public class ListAttendance extends Command {
-    UI ui;
-    private AttendanceList attendances;
+
+    protected UI ui;
+    protected AttendanceList attendances;
 
     public ListAttendance(AttendanceList attendances) {
         this.attendances = attendances;

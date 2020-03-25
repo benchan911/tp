@@ -6,14 +6,19 @@ import seedu.ui.DisplayList;
 
 import static seedu.duke.Duke.studentListCollection;
 
+/**
+ * Class representing a student related command to delete an existing studentList from studentListCollection.
+ */
 public class DeleteStudent extends Command {
 
     protected int index;
-    private DisplayList displayList = new DisplayList();
+    protected DisplayList displayList = new DisplayList();
 
     public DeleteStudent(int index) {
         this.index = index;
     }
+
+    protected
 
     @Override
     public void execute() throws DukeException {

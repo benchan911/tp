@@ -5,9 +5,12 @@ import seedu.attendance.AttendanceList;
 import seedu.command.Command;
 import seedu.exception.DukeException;
 import seedu.parser.AttendanceParser;
+import seedu.ui.DisplayList;
 import seedu.ui.UI;
 
 import java.util.ArrayList;
+
+import static seedu.duke.Duke.studentListCollection;
 
 public class AddAttendance extends Command {
 
@@ -15,34 +18,30 @@ public class AddAttendance extends Command {
     AttendanceList attendances;
     boolean isByNameList;
     String eventName;
+    DisplayList displayList;
 
     public AddAttendance(AttendanceList attendances, String eventName) {
         this.isByNameList = false;
         this.attendances = attendances;
         this.eventName = eventName;
+        this.displayList = new DisplayList();
     }
 
     /**
      * Executes this command on the given task list and user interface.
      */
-
     public void addToList() throws DukeException {
-        System.out.println("By existing nameList? [Y/N] ");
-        String reply = ui.getStringInput();
-        if (reply.contains("Y")) {
-            isByNameList = true;
-        } else {
-            isByNameList = false;
-        }
-        if (isByNameList) {
-            ArrayList<String> studentNameList = new ArrayList<>();
-            //todo: add a list of student list, and let user select a student list to be used.
+        System.out.println("Would you like to import an existing student list? "
+                + "If yes, input 'yes'. Else, input anything.");
+        if (isByNameList()) {
+            displayList.printStudentListCollection();
+            ArrayList<String> studentNameList = fetchAttendanceList();
             if (studentNameList.isEmpty()) {
                 throw new DukeException("There is no existing student list.");
             }
             for (String studentName: studentNameList) {
                 attendances.addToList(new Attendance(studentName,
-                    ui.getResultOfStudent(studentName)), eventName);
+                    ui.getAttendanceStatusOfStudent(studentName)), eventName);
             }
         } else {
             int studentNumber = 0;
@@ -55,6 +54,27 @@ public class AddAttendance extends Command {
             System.out.println("You have successfully added "
                     + studentNumber + " to the attendance list.");
         }
+    }
+
+    private boolean isByNameList() {
+        String reply = ui.getStringInput();
+        if (reply.contains("yes")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private ArrayList<String> fetchAttendanceList() throws DukeException {
+        ui.readIndexPrompt();
+        ui.readUserInput();
+        try{
+            int index = Integer.parseInt(ui.getUserInput());
+            return studentListCollection.get(index-1).getStudentList();
+        } catch (Exception e) {
+            throw new DukeException("Invalid Format");
+        }
+
     }
 
     private Attendance getAttendance(String parameter) throws DukeException {

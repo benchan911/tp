@@ -7,11 +7,14 @@ import seedu.ui.UI;
 
 import static seedu.duke.Duke.studentListCollection;
 
+/**
+ * Class representing a student related command to add a new studentList to studentListCollection.
+ */
 public class AddStudent extends Command {
 
-    private UI ui;
-    private DisplayList displayList;
-    StudentList newStudentList;
+    protected UI ui;
+    protected DisplayList displayList;
+    protected StudentList newStudentList;
 
     public AddStudent(StudentList newStudentList) {
         this.ui = new UI();

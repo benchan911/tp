@@ -4,8 +4,12 @@ import seedu.command.Command;
 import seedu.exception.DukeException;
 import seedu.ui.DisplayList;
 
+/**
+ * Class representing a student related command to list all studentList in studentListCollection.
+ */
 public class ListStudent extends Command {
-    private DisplayList displayList = new DisplayList();
+
+    protected DisplayList displayList = new DisplayList();
 
     @Override
     public void execute() throws DukeException {
