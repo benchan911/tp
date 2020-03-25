@@ -74,8 +74,19 @@ create a new attendance list. `n/` and `p/` flags are used to insert new attenda
 
 ### Performance Tracker
 *Class diagram of the Performance component*
+
 ### Student List Collection
 *Class diagram of the Student List component*
+1. When a user enters a studentList-related command, the command is analysed by `StudentCommandInterpreter`.
+1. Once determined, the relevant class that corresponds to the type of command is created.
+1. Then, the class will execute base on its function. It modifies `studentListCollection`.
+1. These commands are then returned to `Duke.run()` to `execute()`.
+
+Note that:
+* To create a new studentList use `student add`. The new studentList will be added to the existing studentLists
+that is stored inside the studentListCollection in chronological order of when it is created. 
+* To view all existing studentList in studentListCollection use `student list`
+* 
 
 
 ## Design & Implementation
