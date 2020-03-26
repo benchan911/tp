@@ -256,6 +256,10 @@ public class UI {
     }
 
     public void readIndexPrompt() {
-        System.out.print("Please state the index of the studentList that you wish to import");
+        System.out.println("Please state the index of the studentList that you wish to import");
+    }
+
+    public void clearAttendanceMessage(String eventName) {
+        System.out.println("Attendance List cleared for Event: " + eventName);
     }
 }

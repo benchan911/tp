@@ -12,19 +12,24 @@ import java.util.ArrayList;
 
 import static seedu.duke.Duke.studentListCollection;
 
+/**
+ * Class representing an attendance related command to add an attendanceList for a specific event.
+ * attendanceList by default will create a new list.
+ * However, attendanceList can be added using an existing studentList in the studentListCollection.
+ * If there is an existing attendanceList, this command will append to the end of the list.
+ */
 public class AddAttendanceList extends Command {
 
-    static UI ui = new UI();
-    AttendanceList attendances;
-    boolean isByNameList;
-    String eventName;
-    DisplayList displayList;
+    protected AttendanceList attendances;
+    protected String eventName;
+    private DisplayList displayList;
+    private UI ui;
 
     public AddAttendanceList(AttendanceList attendances, String eventName) {
-        this.isByNameList = false;
         this.attendances = attendances;
         this.eventName = eventName;
         this.displayList = new DisplayList();
+        this.ui = new UI();
     }
 
     public void addToList() throws DukeException {
@@ -55,17 +60,18 @@ public class AddAttendanceList extends Command {
     }
 
     private void appendWithExistingList(ArrayList<String> studentNameList) {
-        studentNameList.add("done");
         for (String studentName: studentNameList) {
-            if (studentName.contains("done")) {
-                System.out.println("AttendanceList added");
-                break;
-            }
             attendances.addToList(new Attendance(studentName,
                     ui.getAttendanceStatusOfStudent(studentName)), eventName);
         }
+        System.out.println("AttendanceList added");
     }
 
+    /**
+     * Check the user input.
+     * @return true if the user wants to import an existing list.
+     * @return false if the user wants to create a new list.
+     */
     private boolean isByNameList() {
         String reply = ui.getStringInput();
         if (reply.contains("yes")) {
@@ -95,7 +101,8 @@ public class AddAttendanceList extends Command {
         try {
             addToList();
         } catch (Exception e) {
-            throw new DukeException("Attendance List fail to add");
+            throw new DukeException("Attendance List fail to add. If you wish to add attendance again,"
+                    + "please type the command 'attendance add' again");
         }
 
     }

@@ -2,8 +2,10 @@ package seedu.command.interpreter;
 
 import seedu.StudentList;
 import seedu.command.Command;
+import seedu.command.student.SortStudentListByName;
 import seedu.command.student.AddStudentList;
 import seedu.command.student.DeleteStudentList;
+import seedu.command.student.SortStudentList;
 import seedu.command.student.ViewStudentList;
 import seedu.event.EventList;
 import seedu.exception.DukeException;
@@ -30,10 +32,22 @@ public class StudentCommandInterpreter extends CommandInterpreter {
             try {
                 return new DeleteStudentList(Integer.parseInt(commandParameters));
             } catch (Exception e) {
-                throw new DukeException(e.getMessage());
+                throw new DukeException("Student Command Delete failed");
+            }
+        case "sort":
+            try {
+                return new SortStudentList();
+            } catch (Exception e) {
+                throw new DukeException("student sort failed");
+            }
+        case "sort/":
+            try {
+                return new SortStudentListByName();
+            } catch (Exception e) {
+                throw new DukeException("student sort by name failed");
             }
         default:
-            throw new DukeException("Performance: Unknown command.");
+            throw new DukeException("Student: Unknown command.");
         }
     }
 

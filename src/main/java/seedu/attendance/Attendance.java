@@ -1,5 +1,7 @@
 package seedu.attendance;
 
+import java.util.Comparator;
+
 /**
  * Class representing attendance of a student.
  */
@@ -34,4 +36,12 @@ public class Attendance {
         return studentName + " " + isPresent;
     }
 
+
+    public static Comparator<Attendance> attendanceListNameComparator = new Comparator<Attendance>() {
+        public int compare(Attendance s1, Attendance s2) {
+            String listName1 = s1.getStudentName().toUpperCase();
+            String listName2 = s2.getStudentName().toUpperCase();
+            return listName1.compareTo(listName2);
+        }
+    };
 }

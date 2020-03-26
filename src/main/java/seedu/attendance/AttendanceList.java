@@ -1,10 +1,14 @@
 package seedu.attendance;
 
+import seedu.StudentList;
 import seedu.exception.DukeException;
 import seedu.ui.DisplayTable;
 import seedu.ui.UI;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
+import static seedu.attendance.Attendance.attendanceListNameComparator;
 
 /**
  * Class representing attendance list of student's attendance status.
@@ -13,7 +17,7 @@ public class AttendanceList {
 
     protected ArrayList<Attendance> attendanceList;
     protected UI ui;
-    protected DisplayTable displayTable;
+    private DisplayTable displayTable;
 
     public AttendanceList() {
         this.ui = new UI();
@@ -24,7 +28,6 @@ public class AttendanceList {
     public void addToList(Attendance attendance, String eventName) {
         attendanceList.add(attendance);
         ui.addAttendanceMessage(attendance.studentName, eventName);
-        System.out.println("Please insert the next student");
     }
 
     public void printList() throws DukeException {
@@ -39,10 +42,24 @@ public class AttendanceList {
         }
     }
 
+    /**
+     * Check whether the attendanceList is empty.
+     * @return the status of attendanceList.
+     */
     public boolean isEmpty() {
         return attendanceList.isEmpty();
     }
 
 
+    /**
+     * Clear the attendanceList.
+     */
+    public void clearList() {
+        attendanceList.clear();
+    }
+
+    public void sort() {
+        Collections.sort(attendanceList,attendanceListNameComparator);
+    }
 
 }
