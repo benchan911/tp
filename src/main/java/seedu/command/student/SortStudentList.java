@@ -3,6 +3,7 @@ package seedu.command.student;
 import seedu.StudentList;
 import seedu.command.Command;
 import seedu.exception.DukeException;
+import seedu.ui.UI;
 
 import static seedu.duke.Duke.studentListCollection;
 
@@ -12,6 +13,7 @@ import static seedu.duke.Duke.studentListCollection;
 public class SortStudentList extends Command {
 
     protected StudentList studentList;
+    private UI ui = new UI();
 
     private void sort() {
         for (int i = 0; i < studentListCollection.size(); i++) {
@@ -22,5 +24,6 @@ public class SortStudentList extends Command {
     @Override
     public void execute() throws DukeException {
         sort();
+        ui.displayStudentMessage("StudentList sorted by name within the lists");
     }
 }

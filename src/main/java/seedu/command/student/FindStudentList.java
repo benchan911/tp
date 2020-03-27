@@ -18,6 +18,7 @@ public class FindStudentList extends Command {
     protected UI ui = new UI();
 
     protected void find() throws DukeException {
+        ui.displayStudentMessage("Please state the list name you are searching for");
         ui.readUserInput();
         name = ui.getUserInput();
         for (int i = 0; i < studentListCollection.size(); i++) {

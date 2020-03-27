@@ -6,14 +6,25 @@ import seedu.performance.Performance;
 
 import java.util.Scanner;
 
+import static seedu.duke.Duke.studentListCollection;
+
 public class UI {
+    private static String userName;
     private Scanner in;
     private String userInput;
-    private static String userName;
 
 
     public UI() {
         in = new Scanner(System.in);
+    }
+
+    public static void display(String message) {
+        System.out.println(message);
+    }
+
+    public static void editEventVenueMessage(String oldVenue, String newVenue, String eventType) {
+        System.out.printf("Your %s venue was changed from |%s| to |%s|.\n",
+                eventType, oldVenue, newVenue);
     }
 
     /**
@@ -44,10 +55,6 @@ public class UI {
      */
     public void close() {
         in.close();
-    }
-
-    public static void display(String message) {
-        System.out.println(message);
     }
 
     /**
@@ -82,11 +89,6 @@ public class UI {
     public void editEventDateTimeMessage(String oldDateTime, String newDateTime, String eventType) {
         System.out.printf("Your %s date and time was changed from |%s| to |%s|.\n",
                 eventType, oldDateTime, newDateTime);
-    }
-
-    public static void editEventVenueMessage(String oldVenue, String newVenue, String eventType) {
-        System.out.printf("Your %s venue was changed from |%s| to |%s|.\n",
-                eventType, oldVenue, newVenue);
     }
 
     public void addEventMessage(String eventType, String eventName) {
@@ -174,10 +176,10 @@ public class UI {
         return in.nextLine();
     }
 
-    public void printWrongInput(String typeInput) {
-        System.out.printf("Wrong %s input. If you need help with "
-                + "the input format, please input help.\n", typeInput);
+    public void clearAttendanceMessage(String eventName) {
+        System.out.println("Attendance List cleared for Event: " + eventName);
     }
+
 
     public void printInsufficientInput(String typeInput) {
         System.out.printf("No %s input. If you need help with "
@@ -200,7 +202,7 @@ public class UI {
         System.out.println("What is the name of your list?");
         return in.nextLine();
     }
-    
+
     public void printGetHelp() {
         System.out.println("Hello " + userName + ", please select the type of "
                 + "command that you wish to get the format for.");
@@ -210,7 +212,7 @@ public class UI {
         System.out.println("4. Student List");
         System.out.println("To track any list, input: type_of_list list");
     }
-    
+
     public void printEventHelp() {
         System.out.print("To add an event, use the following format:\n  "
                 + "Event add n/Event_name v/Venue_name d/yyyy-MM-dd. "
@@ -259,7 +261,29 @@ public class UI {
         System.out.println("Please state the index of the studentList that you wish to import");
     }
 
-    public void clearAttendanceMessage(String eventName) {
-        System.out.println("Attendance List cleared for Event: " + eventName);
+    public void printWrongInput(String typeInput) {
+        System.out.printf("Wrong %s input. If you need help with "
+                + "the input format, please input help.\n", typeInput);
+    }
+
+    public void clearMessage() {
+        System.out.println("Student List Cleared");
+    }
+
+    public void displayStudentMessage(String message) {
+        System.out.println(message);
+    }
+
+    public void printStudentListCollection() throws DukeException {
+        DisplayTable displayTable = new DisplayTable();
+        for (int i = 0; i < studentListCollection.size(); i++) {
+            displayTable.printHeaderOfTwo("List #" + Integer.toString(i + 1),
+                    studentListCollection.get(i).getListName());
+            int index = 1;
+            for (String name: studentListCollection.get(i).getStudentList()) {
+                displayTable.printBodyOfTwo(index, name);
+                index++;
+            }
+        }
     }
 }

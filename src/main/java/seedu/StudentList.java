@@ -1,8 +1,12 @@
 package seedu;
 
+import seedu.ui.DisplayTable;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+
+import static seedu.duke.Duke.studentListCollection;
 
 /**
  * Class representing a studentList.
@@ -50,13 +54,14 @@ public class StudentList {
      * Display the existing student names in the studentList.
      */
     public void showList() {
-        System.out.println(listName);
+        DisplayTable displayTable = new DisplayTable();
+        displayTable.printHeaderOfTwo("List", listName);
         int index = 1;
-        for (String name : studentList) {
-            System.out.print(index + ". ");
-            System.out.println(name);
+        for (String name: studentList) {
+            displayTable.printBodyOfTwo(index, name);
             index++;
         }
+
     }
 
     public static Comparator<StudentList> listNameComparator = new Comparator<StudentList>() {
@@ -66,4 +71,8 @@ public class StudentList {
             return listName1.compareTo(listName2);
         }
     };
+
+    public String getStudentName() {
+        return studentName;
+    }
 }

@@ -6,6 +6,7 @@ import seedu.command.Command;
 import seedu.exception.DukeException;
 import seedu.parser.AttendanceParser;
 import seedu.ui.DisplayList;
+import seedu.ui.DisplayTable;
 import seedu.ui.UI;
 
 import java.util.ArrayList;
@@ -22,13 +23,11 @@ public class AddAttendanceList extends Command {
 
     protected AttendanceList attendances;
     protected String eventName;
-    private DisplayList displayList;
     private UI ui;
 
     public AddAttendanceList(AttendanceList attendances, String eventName) {
         this.attendances = attendances;
         this.eventName = eventName;
-        this.displayList = new DisplayList();
         this.ui = new UI();
     }
 
@@ -36,7 +35,7 @@ public class AddAttendanceList extends Command {
         System.out.println("Would you like to import an existing student list? "
                 + "If yes, input 'yes'. Else, input anything.");
         if (isByNameList()) {
-            displayList.printStudentListCollection();
+            ui.printStudentListCollection();
             ArrayList<String> studentNameList = fetchAttendanceList();
             if (studentNameList.isEmpty()) {
                 throw new DukeException("There is no existing student list.");
