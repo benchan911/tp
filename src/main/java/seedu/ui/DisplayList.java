@@ -53,4 +53,17 @@ public class DisplayList extends UI {
         }
         return Integer.parseInt(getStringInput());
     }
+
+    public void printSearchResults(ArrayList<StudentList> searchResults) throws DukeException {
+        System.out.println("Here's the Search Results");
+        try {
+            for (StudentList studentList : searchResults) {
+                System.out.print("[x] ");
+                studentList.showList();
+                System.out.println("--------------");
+            }
+        } catch (Exception e) {
+            throw new DukeException(e.getMessage());
+        }
+    }
 }

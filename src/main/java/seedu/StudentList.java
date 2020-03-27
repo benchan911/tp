@@ -60,14 +60,10 @@ public class StudentList {
     }
 
     public static Comparator<StudentList> listNameComparator = new Comparator<StudentList>() {
-
         public int compare(StudentList s1, StudentList s2) {
             String listName1 = s1.getListName().toUpperCase();
             String listName2 = s2.getListName().toUpperCase();
-
-            //ascending order
             return listName1.compareTo(listName2);
-
         }
     };
 }
