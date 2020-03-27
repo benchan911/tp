@@ -6,6 +6,8 @@ import seedu.command.attendance.AddAttendanceList;
 import seedu.command.attendance.ClearAttendanceList;
 import seedu.command.attendance.SortAttendanceList;
 import seedu.command.attendance.ViewAttendanceList;
+import seedu.command.attendance.SortAttendanceListByStatus;
+import seedu.command.student.SortStudentListByName;
 import seedu.event.EventList;
 import seedu.exception.DukeException;
 import seedu.ui.UI;
@@ -74,6 +76,9 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
             return new ClearAttendanceList(attendances, eventName);
         case "sort":
             return new SortAttendanceList(attendances);
+        case "sort/":
+            return new SortStudentListByName();
+
         default:
             throw new DukeException("Attendance: Unknown command.");
         }

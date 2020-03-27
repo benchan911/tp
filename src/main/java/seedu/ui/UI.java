@@ -173,6 +173,8 @@ public class UI {
     public String getAttendancePerimeter() {
         System.out.println("Please key in student name and result in the following format:");
         System.out.println("n/Student_Name p/Is_Present");
+        System.out.println("Please note that if you want to mark present, use 'Y'. e.g. n/Jodi p/Y ");
+        System.out.println("Otherwise it will be marked as absent 'N'. e.g. n/John p/x");
         return in.nextLine();
     }
 

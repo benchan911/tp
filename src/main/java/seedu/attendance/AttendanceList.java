@@ -9,6 +9,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import static seedu.attendance.Attendance.attendanceListNameComparator;
+import static seedu.attendance.Attendance.attendanceStatusComparator;
 
 /**
  * Class representing attendance list of student's attendance status.
@@ -62,4 +63,7 @@ public class AttendanceList {
         Collections.sort(attendanceList,attendanceListNameComparator);
     }
 
+    public void sortByStatus() {
+        Collections.sort(attendanceList,attendanceStatusComparator);
+    }
 }
