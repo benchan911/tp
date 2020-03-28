@@ -10,6 +10,9 @@ import java.util.ArrayList;
 
 import static seedu.duke.Duke.studentListCollection;
 
+/**
+ * Class representing a student related command to find an existing studentList by list name.
+ */
 public class FindStudentList extends Command {
 
     private String name;
@@ -17,6 +20,11 @@ public class FindStudentList extends Command {
     protected DisplayList displayList = new DisplayList();
     protected UI ui = new UI();
 
+
+    /**
+     * Method to find an existing student list from studentListCollection by list name.
+     * @throws DukeException    DukeException is thrown when there is an out of bound index.
+     */
     protected void find() throws DukeException {
         ui.displayStudentMessage("Please state the list name you are searching for");
         ui.readUserInput();

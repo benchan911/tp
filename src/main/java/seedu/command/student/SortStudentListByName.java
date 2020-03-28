@@ -19,13 +19,16 @@ public class SortStudentListByName extends Command {
     protected StudentList studentList;
     private UI ui = new UI();
 
+    /**
+     * Method to sort all student list in studentListCollection alphabetically.
+     */
     private void sort() {
         Collections.sort(Duke.studentListCollection, listNameComparator);
+        ui.displayStudentMessage("SortStudent List by name");
     }
 
     @Override
     public void execute() throws DukeException {
         sort();
-        ui.displayStudentMessage("SortStudent List by name");
     }
 }

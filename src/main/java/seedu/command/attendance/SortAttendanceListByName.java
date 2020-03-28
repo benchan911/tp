@@ -7,27 +7,27 @@ import seedu.ui.UI;
 
 /**
  * Class representing an attendance related command to sort the attendanceList of a specific event.
- * Sorts the attendanceList according to Status of the student, 'N' will be found before 'Y'.
+ * Sorts the attendanceList in alphabetical order.
  */
-public class SortAttendanceListByStatus extends Command {
+public class SortAttendanceListByName extends Command {
 
     protected UI ui;
     protected AttendanceList attendances;
 
-    public SortAttendanceListByStatus(AttendanceList attendances) {
+    public SortAttendanceListByName(AttendanceList attendances) {
         this.attendances = attendances;
         this.ui = new UI();
     }
 
     /**
-     * Method to sort an attendance list according to status.
+     * Method to sort an attendance list according to name.
      */
     private void sort() {
         if (attendances.isEmpty()) {
             ui.displayAttendanceMessage("An empty list cannot be sorted");
         } else {
-            attendances.sortByStatus();
-            ui.displayAttendanceMessage("sorted by status");
+            attendances.sort();
+            ui.displayAttendanceMessage("sorted by name");
         }
     }
 

@@ -10,13 +10,17 @@ import seedu.ui.UI;
 import static seedu.duke.Duke.studentListCollection;
 
 /**
- * Class representing a student related command to list all studentList in studentListCollection.
+ * Class representing a student related command to view all existing studentList in studentListCollection.
  */
 public class ViewStudentList extends Command {
 
     protected UI ui = new UI();
 
-    public void displayStudentList() throws DukeException {
+    /**
+     * Method to display all existing student list.
+     * @throws DukeException If studentListCollection is empty.
+     */
+    private void displayStudentList() throws DukeException {
         ui.printStudentListCollection();
     }
 

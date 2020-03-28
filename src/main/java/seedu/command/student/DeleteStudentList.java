@@ -18,7 +18,11 @@ public class DeleteStudentList extends Command {
         this.index = index;
     }
 
-    protected void deleteFromExisting() throws DukeException {
+    /**
+     * Method to delete an existing student list from studentListCollection by its index.
+     * @throws DukeException    DukeException is thrown when there is an out of bound index.
+     */
+    private void deleteFromExisting() throws DukeException {
         try {
             studentListCollection.remove(index - 1);
         } catch (Exception e) {

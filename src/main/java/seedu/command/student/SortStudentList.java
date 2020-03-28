@@ -15,6 +15,9 @@ public class SortStudentList extends Command {
     protected StudentList studentList;
     private UI ui = new UI();
 
+    /**
+     * Method to sort all student list in studentListCollection alphabetically.
+     */
     private void sort() {
         for (int i = 0; i < studentListCollection.size(); i++) {
             studentListCollection.get(i).sortAscending();

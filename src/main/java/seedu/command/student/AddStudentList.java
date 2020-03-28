@@ -23,10 +23,10 @@ public class AddStudentList extends Command {
     }
 
     /**
-     * Adds student names to a new list.
+     * Method to add student names to a new list.
      * Once studentList is created, it will be appended to studentListCollection.
      */
-    protected void addToList() {
+    private void addToList() {
         String listName = ui.getListName();
         StudentList studentList = new StudentList(listName);
         ui.addStudent(studentList);

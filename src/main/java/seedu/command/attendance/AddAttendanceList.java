@@ -5,8 +5,6 @@ import seedu.attendance.AttendanceList;
 import seedu.command.Command;
 import seedu.exception.DukeException;
 import seedu.parser.AttendanceParser;
-import seedu.ui.DisplayList;
-import seedu.ui.DisplayTable;
 import seedu.ui.UI;
 
 import java.util.ArrayList;
@@ -31,6 +29,10 @@ public class AddAttendanceList extends Command {
         this.ui = new UI();
     }
 
+    /**
+     * Method to decide whether user wants to create a new list or use an existing student list.
+     * @throws DukeException If studentNameList is empty.
+     */
     public void addToList() throws DukeException {
         System.out.println("Would you like to import an existing student list? "
                 + "If yes, input 'yes'. Else, input anything.");
@@ -46,6 +48,10 @@ public class AddAttendanceList extends Command {
         }
     }
 
+    /**
+     * Create new attendanceList.
+     * @throws DukeException If parameter provided is invalid.
+     */
     private void createNewList() throws DukeException {
         int studentNumber = 0;
         String parameter = ui.getAttendancePerimeter();
@@ -58,6 +64,10 @@ public class AddAttendanceList extends Command {
                 + studentNumber + " to the attendance list.");
     }
 
+    /**
+     * Append attendanceList with an existing student list.
+     * @param studentNameList the existing student list selected.
+     */
     private void appendWithExistingList(ArrayList<String> studentNameList) {
         for (String studentName: studentNameList) {
             attendances.addToList(new Attendance(studentName,
@@ -80,6 +90,12 @@ public class AddAttendanceList extends Command {
         }
     }
 
+    /**
+     * Method to fetch studentList from studentListCollection.
+     * User can select base on the index given.
+     * @return A studentList selected from the studentListCollection.
+     * @throws DukeException If a string is given instead of an integer.
+     */
     private ArrayList<String> fetchAttendanceList() throws DukeException {
         ui.readIndexPrompt();
         ui.readUserInput();
@@ -91,6 +107,12 @@ public class AddAttendanceList extends Command {
         }
     }
 
+    /**
+     * Method to create a new attendance to be inserted in the attendanceList.
+     * @param parameter the student name and attendance status.
+     * @return attendance of a student.
+     * @throws DukeException If the parameter given is invalid.
+     */
     private Attendance getAttendance(String parameter) throws DukeException {
         return new AttendanceParser().parseAttendance(parameter);
     }
@@ -100,7 +122,7 @@ public class AddAttendanceList extends Command {
         try {
             addToList();
         } catch (Exception e) {
-            throw new DukeException("Attendance List fail to add. If you wish to add attendance again,"
+            throw new DukeException("Attendance List fail to add. If you wish to add attendance again,\n"
                     + "please type the command 'attendance add' again");
         }
 

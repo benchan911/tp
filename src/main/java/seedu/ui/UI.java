@@ -288,4 +288,8 @@ public class UI {
             }
         }
     }
+
+    public void displayAttendanceMessage(String message) {
+        System.out.println(message);
+    }
 }
