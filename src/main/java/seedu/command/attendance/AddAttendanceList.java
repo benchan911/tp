@@ -4,7 +4,6 @@ import seedu.attendance.Attendance;
 import seedu.attendance.AttendanceList;
 import seedu.command.Command;
 import seedu.exception.DukeException;
-import seedu.parser.AttendanceParser;
 import seedu.ui.UI;
 
 import java.util.ArrayList;
@@ -114,16 +113,6 @@ public class AddAttendanceList extends Command {
         } catch (Exception e) {
             throw new DukeException("Invalid Format");
         }
-    }
-
-    /**
-     * Method to create a new attendance to be inserted in the attendanceList.
-     * @param parameter the student name and attendance status.
-     * @return attendance of a student.
-     * @throws DukeException If the parameter given is invalid.
-     */
-    private Attendance getAttendance(String parameter) throws DukeException {
-        return new AttendanceParser().parseAttendance(parameter);
     }
 
     @Override
