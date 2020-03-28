@@ -54,14 +54,23 @@ public class AddAttendanceList extends Command {
      */
     private void createNewList() throws DukeException {
         int studentNumber = 0;
-        String parameter = ui.getAttendancePerimeter();
-        do {
-            attendances.addToList(getAttendance(parameter), eventName);
-            parameter = ui.getStringInput();
+        String name = "";
+        String status = "";
+        while (!status.equals("done")) {
+            System.out.println("\nName of Student?");
+            ui.readUserInput();
+            name = ui.getUserInput();
+            if (name.equals("done")) {
+                break;
+            }
+            System.out.println("\nStatus [Y/N]?");
+            ui.readUserInput();
+            status = ui.getUserInput();
+            attendances.addToList(new Attendance(name,status), eventName);
             studentNumber++;
-        } while (!parameter.equals("done"));
+        }
         System.out.println("You have successfully added "
-                + studentNumber + " to the attendance list.");
+                + studentNumber + " to the attendance list.\n");
     }
 
     /**
