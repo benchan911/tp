@@ -4,7 +4,11 @@ import seedu.StudentList;
 import seedu.exception.DukeException;
 import seedu.performance.Performance;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Stream;
+
+import static seedu.duke.Duke.studentListCollection;
 
 import static seedu.duke.Duke.studentListCollection;
 
@@ -33,8 +37,10 @@ public class UI {
      * The position is set to the beginning of the next line.
      */
     public void readUserInput() {
+        System.out.print(">>> ");
         userInput = in.nextLine();
     }
+
 
     /**
      * Returns the string that is read from
@@ -91,6 +97,11 @@ public class UI {
                 eventType, oldDateTime, newDateTime);
     }
 
+    public void editEventVenueMessage(String oldVenue, String newVenue, String eventType) {
+        System.out.printf("Your %s venue was changed from |%s| to |%s|.\n",
+                eventType, oldVenue, newVenue);
+    }
+
     public void addEventMessage(String eventType, String eventName) {
         System.out.printf("New %s: %s was added successfully to "
                 + "your Event list.\n", eventType, eventName);
@@ -109,6 +120,69 @@ public class UI {
     public void deleteEventMessage(String eventType, String eventName) {
         System.out.printf("%s: %s was deleted successfully from "
                 + "your Event list.\n", eventType, eventName);
+    }
+
+    public static void printBorderOfCalendar() {
+        System.out.print("|");
+        Stream.generate(() -> "_").limit(11).forEach(System.out::print);
+        System.out.print("|");
+        Stream.generate(() -> "_").limit(11).forEach(System.out::print);
+        System.out.print("|");
+        Stream.generate(() -> "_").limit(11).forEach(System.out::print);
+        System.out.print("|");
+        Stream.generate(() -> "_").limit(11).forEach(System.out::print);
+        System.out.print("|");
+        Stream.generate(() -> "_").limit(11).forEach(System.out::print);
+        System.out.print("|");
+        Stream.generate(() -> "_").limit(11).forEach(System.out::print);
+        System.out.print("|\n");
+    }
+
+    public static void printCalendarHeading(int semesterOneYear, int semesterTwoYear, int semester) {
+        printCalendarHorizontalLine();
+        String line = "SEMESTER " + semester + " AY " + semesterOneYear + "/" + semesterTwoYear;
+        System.out.printf(" %40s %n", line);
+        printCalendarHorizontalLine();
+    }
+
+    public static void printCalendarHorizontalLine() {
+        Stream.generate(() -> " _").limit(1).forEach(System.out::print);
+        Stream.generate(() -> "_").limit(70).forEach(System.out::print);
+        System.out.println(" ");
+    }
+
+    public static void printBodyOfSix(ArrayList<String> description) {
+        String columnOfSix = ("| %-10s| %-10s| %-10s| %-10s| %-10s| %-10s|%n");
+        System.out.printf(columnOfSix, description.get(0), description.get(1), description.get(2), description.get(3),
+                description.get(4), description.get(5));
+        printBorderOfCalendar();
+    }
+
+
+    public static void printCalendar(ArrayList<ArrayList<String>> list, int semesterOneYear, int semesterTwoYear,
+                                     int semester) {
+        printCalendarHeading(semesterOneYear, semesterTwoYear, semester);
+        printCalendarMonthsHeading(semester);
+    }
+
+    public static void printCalendarMonthsHeading(int semester) {
+        ArrayList<String> months = new ArrayList<>();
+        if (semester == 1) {
+            months.add(0, "JUL");
+            months.add(1, "AUG");
+            months.add(2, "SEP");
+            months.add(3, "OCT");
+            months.add(4, "NOV");
+            months.add(5, "DEC");
+        } else {
+            months.add(0, "JAN");
+            months.add(1, "FEB");
+            months.add(2, "MAR");
+            months.add(3, "APR");
+            months.add(4, "MAY");
+            months.add(5, "JUN");
+        }
+        printBodyOfSix(months);
     }
 
     /**
