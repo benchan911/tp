@@ -2,7 +2,6 @@ package seedu.event;
 
 import seedu.ui.UI;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -10,12 +9,11 @@ import java.time.format.DateTimeParseException;
 public class DateTime {
     private String dateTime;
     private String dateTimeFormat;
-    private UI ui;
+    private boolean isAutoSet = false;
 
     public DateTime(String arguments) {
         this.dateTime = arguments;
         this.dateTimeFormat = getDateTimeFormat();
-        this.ui = new UI();
     }
 
     /**
@@ -36,8 +34,11 @@ public class DateTime {
             LocalDateTime localDateTime = LocalDateTime.parse(dateTime, DateTimeFormatter.ofPattern("yyyy-MM-dd HHmm"));
             return localDateTime;
         } catch (DateTimeParseException e) {
-            UI.display("Unknown DateTime format provided. DateTime is set to local time in the format: "
-                    + "yyyy-MM-dd HHmm.");
+            if (!isAutoSet) {
+                UI.display("Unknown DateTime format provided. DateTime is set to local time in the format: "
+                        + "yyyy-MM-dd HHmm.");
+            }
+            isAutoSet = true;
             LocalDateTime currentDateTime = LocalDateTime.now();
             return currentDateTime;
         }
