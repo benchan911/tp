@@ -26,11 +26,6 @@ public class UI {
         System.out.println(message);
     }
 
-    public static void editEventVenueMessage(String oldVenue, String newVenue, String eventType) {
-        System.out.printf("Your %s venue was changed from |%s| to |%s|.\n",
-                eventType, oldVenue, newVenue);
-    }
-
     /**
      * Advances this scanner past the current line and stores the input that
      * was skipped, excluding any line separator at the end.
