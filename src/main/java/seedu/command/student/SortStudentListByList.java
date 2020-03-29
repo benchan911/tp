@@ -10,7 +10,7 @@ import static seedu.duke.Duke.studentListCollection;
 /**
  * Class representing a student related command to sort all studentList by alphabetical order.
  */
-public class SortStudentList extends Command {
+public class SortStudentListByList extends Command {
 
     protected StudentList studentList;
     private UI ui = new UI();

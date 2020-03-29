@@ -14,11 +14,9 @@ public class AddStudentList extends Command {
 
     protected UI ui;
     protected DisplayList displayList;
-    protected StudentList newStudentList;
 
-    public AddStudentList(StudentList newStudentList) {
+    public AddStudentList() {
         this.ui = new UI();
-        this.newStudentList = newStudentList;
         this.displayList = new DisplayList();
     }
 

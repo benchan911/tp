@@ -18,7 +18,7 @@ public class ClearStudentList extends Command {
      */
     private void clear() {
         studentListCollection.clear();
-        ui.clearMessage();
+        ui.displayStudentMessage("The Student List Collection is cleared");
     }
 
     @Override

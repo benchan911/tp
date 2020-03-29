@@ -3,6 +3,7 @@ package seedu.command.student;
 import seedu.command.Command;
 import seedu.exception.DukeException;
 import seedu.ui.DisplayList;
+import seedu.ui.UI;
 
 import static seedu.duke.Duke.studentListCollection;
 
@@ -13,6 +14,7 @@ public class DeleteStudentList extends Command {
 
     protected int index;
     protected DisplayList displayList = new DisplayList();
+    protected UI ui = new UI();
 
     public DeleteStudentList(int index) {
         this.index = index;
@@ -26,8 +28,9 @@ public class DeleteStudentList extends Command {
         try {
             studentListCollection.remove(index - 1);
         } catch (Exception e) {
-            throw new DukeException("Deletion Failed");
+            throw new DukeException("Deletion Failed, out of bound.");
         }
+        ui.displayStudentMessage("Here is the updated Student List Collection");
         displayList.printStudentListCollection();
     }
 

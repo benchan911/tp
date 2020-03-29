@@ -1,13 +1,8 @@
 package seedu.command.student;
 
-import seedu.StudentList;
 import seedu.command.Command;
 import seedu.exception.DukeException;
-import seedu.ui.DisplayList;
-import seedu.ui.DisplayTable;
 import seedu.ui.UI;
-
-import static seedu.duke.Duke.studentListCollection;
 
 /**
  * Class representing a student related command to view all existing studentList in studentListCollection.
@@ -18,9 +13,8 @@ public class ViewStudentList extends Command {
 
     /**
      * Method to display all existing student list.
-     * @throws DukeException If studentListCollection is empty.
      */
-    private void displayStudentList() throws DukeException {
+    private void displayStudentList() {
         ui.printStudentListCollection();
     }
 

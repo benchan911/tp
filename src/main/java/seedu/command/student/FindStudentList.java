@@ -34,7 +34,12 @@ public class FindStudentList extends Command {
                 searchResults.add(studentListCollection.get(i));
             }
         }
-        displayList.printSearchResults(searchResults);
+        if (searchResults.isEmpty()) {
+            ui.displayStudentMessage("Nothing match you description : " + name);
+        } else {
+            ui.displayStudentMessage("You have " + searchResults.size() + " matches:");
+            displayList.printSearchResults(searchResults);
+        }
     }
 
 

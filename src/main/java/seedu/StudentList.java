@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import static seedu.duke.Duke.studentListCollection;
-
 /**
  * Class representing a studentList.
  */
@@ -15,11 +13,10 @@ public class StudentList {
 
     public ArrayList<String> studentList;
     public String listName;
-    public String studentName;
 
     public StudentList(String listName) {
         this.listName = listName;
-        studentList = new ArrayList<String>();
+        studentList = new ArrayList<>();
     }
 
     /**
@@ -72,7 +69,4 @@ public class StudentList {
         }
     };
 
-    public String getStudentName() {
-        return studentName;
-    }
 }

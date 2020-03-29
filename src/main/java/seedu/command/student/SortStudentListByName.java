@@ -24,7 +24,7 @@ public class SortStudentListByName extends Command {
      */
     private void sort() {
         Collections.sort(Duke.studentListCollection, listNameComparator);
-        ui.displayStudentMessage("SortStudent List by name");
+        ui.displayStudentMessage("Student List is sorted by name within the Student List Collection");
     }
 
     @Override
