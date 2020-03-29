@@ -69,4 +69,13 @@ public class StudentList {
         }
     };
 
+    @Override
+    public String toString() {
+        String data = listName;
+        for (String studentName : studentList) {
+            data = data.concat("|" + studentName);
+        }
+        return data;
+    }
+
 }

@@ -9,6 +9,7 @@ import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 import seedu.StudentList;
+import seedu.StudentListCollection;
 import seedu.command.Bye;
 import seedu.command.interpreter.CommandInterpreter;
 import seedu.command.Command;
@@ -22,8 +23,7 @@ public class Duke {
     protected UI ui;
     protected CommandInterpreter interpreter;
     protected EventList eventList;
-    public static ArrayList<StudentList> studentListCollection;
-    protected int maxListSize = 100;
+    public static StudentListCollection studentListCollection;
 
     public Duke() {
         setupLogger();
@@ -32,7 +32,7 @@ public class Duke {
         eventList = new EventList();  //TODO: new Storage().load()
 
         interpreter = new CommandInterpreter(eventList);
-        studentListCollection = new ArrayList<>(maxListSize);
+        studentListCollection = new StudentListCollection();
     }
 
     private void setupLogger() {
