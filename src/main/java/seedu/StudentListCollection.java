@@ -14,7 +14,7 @@ public class StudentListCollection extends ArrayList<StudentList> {
     public String toString() {
         String data = "";
         for (StudentList studentList: this.studentListCollection) {
-            data = data.concat("\n" + studentList.toString());
+            data = data.concat(System.lineSeparator() + studentList.toString());
         }
         return data;
     }
