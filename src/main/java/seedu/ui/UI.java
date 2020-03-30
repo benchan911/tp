@@ -254,9 +254,6 @@ public class UI {
         do {
             System.out.println("Please enter a student Name. If you are finished, enter done");
             studentName = in.nextLine();
-            if (studentName.contains("done")) {
-                break;
-            }
             studentList.addToList(studentName);
         } while (!studentName.equals("done"));
     }
@@ -328,10 +325,6 @@ public class UI {
                 + "student sort/by/list\n\n");
     }
 
-    public void readIndexPrompt() {
-        System.out.println("Please state the index of the studentList that you wish to import");
-    }
-
     public void displayStudentMessage(String message) {
         System.out.println(message);
     }
@@ -342,7 +335,7 @@ public class UI {
         } else {
             DisplayTable displayTable = new DisplayTable();
             for (int i = 0; i < studentListCollection.size(); i++) {
-                displayTable.printHeaderOfTwo("List #" + Integer.toString(i + 1),
+                displayTable.printHeaderOfTwo("List #" + (i + 1),
                         studentListCollection.get(i).getListName());
                 int index = 1;
                 for (String name : studentListCollection.get(i).getStudentList()) {

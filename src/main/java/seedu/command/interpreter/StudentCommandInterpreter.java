@@ -27,7 +27,6 @@ public class StudentCommandInterpreter extends CommandInterpreter {
     public Command decideCommand(String commandDescription) throws DukeException {
 
         String commandType = getFirstWord(commandDescription);
-        String commandParameters = getSubsequentWords(commandDescription);
         switch (commandType) {
         case "add":
             try {
@@ -44,7 +43,7 @@ public class StudentCommandInterpreter extends CommandInterpreter {
             }
         case "delete":
             try {
-                return new DeleteStudentList(Integer.parseInt(commandParameters));
+                return new DeleteStudentList();
             } catch (Exception e) {
                 throw new DukeException("Student Command Delete failed.");
             }
