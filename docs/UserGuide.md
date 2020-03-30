@@ -26,6 +26,9 @@
 4.2. [Attendance](#42-attendance)  
 4.2.1. [Add New Attendance](#421-add-students-attendance-to-event-attendance-attendance-add)    
 4.2.2. [View Attendance List](#422-view-attendance-list-attendance-list)   
+4.2.3. [Clear Attendance](#423-clear-attendance-list-attendance-clear)  
+4.2.4. [Sort Attendance by name](#424-sort-attendance-list-by-name-attendance-sortbyname)  
+4.2.5. [Sort Attendance by status](#425-sort-attendance-list-by-status-attendance-sortbystatus)  
 4.3. [Performance](#43-performance)     
 4.3.1. [Add New Performance](#431-add-performance)  
 4.3.2. [Delete Current Performance](#432-delete-performance)   
@@ -217,57 +220,98 @@ Add a student’s attendance to the performance list.
 This is a step by step command and you may follow the instructions given by the console. 
 You may wish to use an existing list found in StudentListCollection.
 
-Format: `attendance add`
+Command:  `attendance add`
     
-Step by step guide: 
+Example:
 
-    User:   attendance add
-    PAC:    Please key in the name of event that you wish to access to its student's performance. 
-    User:   eventName
+    >>>     attendance add
+    Please key in the name of event.
+    >>>     CS1010 Tutorial
     
 If the event is found, you can choose to add the student's attendance by manually key in each student, or you may choose
 the alternative provided by PAC: record using an existing name list located under StudentListCollection. 
 Do note that you need to have an existing name list before you are using this shortcut.  
 The following will show a success example of *using an existing name list to add attendance*. 
 
-    PAC:    Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
-    User:   yes
-    PAC:    Please choose the name list you wish to use by its index. (shows a list of list names)
-    User:   1    
-    PAC:    Please key in the attendance status for student (student1 name) [Y/N]
-    User:   Y
-    PAC:    (student name) is (attendance status) for event (event name)
+    Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
+    >>>     yes
+    Please choose the name list you wish to use by its index.
+    >>>     1    
+    Please key in the attendance status for student Jodi Doe [Y/N].
+    >>>     N
+    Jodi Doe is absent for event CS1010 Tutorial
     ...
 
 The following will show a success example of *creating a new attendance list*.
 
-    PAC:    Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
-    User:   no
-    PAC:    Please key in student name and result in the following format: n/Student_Name p/Is_Present
-    User:   n/John Doe p/Y
-    PAC:    Please key in the attendance status for student (student1 name) [Y/N]
-    User:   Y
-    PAC:    (student name) is (attendance status) for event (event name)
+    Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
+    >>>     no
+    Please key in student name.
+    >>>     John Doe
+    Please key in the student's attendance status [Y/N].
+    >>>     Y
+    John Doe is present for event CS1010 Tutorial.
     ...
     
 #### 4.2.2 View attendance list: `attendance list`
 
 View the attendance list under a certain event.  
 
-Format: `attendance list`
+Command:  `attendance list`
     
-Step by step guide: 
+Example:
 
-    User:   attendance list
-    PAC:    Please key in the name of event.
-    User:   eventName
-    PAC:    (example of Table format list is shown below)
+    >>>     attendance list
+    Please key in the name of event.
+    >>>     CS1010 Tutorial
     _________________________________________________________________________________________________
-    | index     |  Name of Student                    |  Result                                     |
+    | index     |  Name of Student                    |  Attendance Status                          |
     |___________|_____________________________________|_____________________________________________|
-    | 1         |  XX                                 |  A                                          |
+    | 1         |  John Doe                           |  Present                                    |
     |___________|_____________________________________|_____________________________________________|
+    | 2         |  Jodi Doe                           |  Absent                                     |
+    |___________|_____________________________________|_____________________________________________|
+    
+#### 4.2.3 Clear attendance list: `attendance clear`
 
+Clear the attendance list under a certain event.  Attendance list is cleared regardless whether 
+the attendance list under the event is empty.
+
+Command:  `attendance clear`
+    
+Example:
+
+    >>>     attendance list
+    Please key in the name of event.
+    >>>     CS1010 Tutorial
+    Attendance List cleared for Event: event1
+            
+#### 4.2.4 Sort attendance list by name: `attendance sort/by/name`
+
+Sort the attendance list by name in alphabetical order under a certain event.  
+
+Command:  `attendance sort/by/name`
+    
+Example:
+
+    >>>     attendance sort/by/name
+    Please key in the name of event.
+    >>>     CS1010 Tutorial
+    Attendance List is sorted by name for Event: event1
+    
+#### 4.2.5 Sort attendance list by status: `attendance sort/by/status`
+
+Sort the attendance list by attendance status under a certain event with student that are absent on the top.  
+
+Command:  `attendance sort/by/status`
+    
+Example:
+
+    >>>     attendance list
+    Please key in the name of event.
+    >>>     CS1010 Tutorial
+    Attendance List is sorted by attendance status for Event: event1
+    
 ### 4.3. Performance
 #### 4.3.1. Add Performance
 Add a student’s result to the performance list.  
