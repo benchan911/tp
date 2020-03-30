@@ -219,9 +219,13 @@ a clearer understanding on how you can use the commands.
 
 #### 4.2.1 Add students’ attendance to event: attendance `attendance add`
 
-Add a student’s attendance to the performance list.  
+Add a student’s attendance to the attendance list.  
 This is a step by step command and you may follow the instructions given by the console. 
 You may wish to use an existing list found in StudentListCollection.
+
+Please note that if there are existing students in the attendance list of the chosen event, it will add to the existing
+students list. If you wish to start a new attendance list of the chosen event, please use `attendance clear` to clear 
+the attendance list first.
 
 Command:  `attendance add`
     
