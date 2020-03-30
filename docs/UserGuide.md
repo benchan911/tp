@@ -555,7 +555,7 @@ in order, this command will force all existing lists to be sorted by their list 
 
 Command: 
     
-    >>> student sort/by/name
+    >>> student sort
         
 Examples:     
 
@@ -626,7 +626,7 @@ Examples:
 Sort all existing student lists from the student list collection by name. Regardless whether the lists are 
 in order, this command will force all existing lists to be sorted by their name.
     
-    >>> student list
+    >>> student sort
     _________________________________________________________________________________________________
     | List #1   |  CG2028                                                                            |
     |___________|____________________________________________________________________________________|
