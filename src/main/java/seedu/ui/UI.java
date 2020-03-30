@@ -263,7 +263,7 @@ public class UI {
             System.out.println("Please enter a student Name. If you are finished, enter done");
             readUserInput();
             studentName = getUserInput();
-            if (studentName.equals("done")){
+            if (studentName.equals("done")) {
                 break;
             } else {
                 studentList.addToList(studentName);
