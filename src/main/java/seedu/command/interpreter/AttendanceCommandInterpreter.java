@@ -7,8 +7,6 @@ import seedu.command.attendance.ClearAttendanceList;
 import seedu.command.attendance.SortAttendanceListByName;
 import seedu.command.attendance.ViewAttendanceList;
 import seedu.command.attendance.SortAttendanceListByStatus;
-import seedu.command.student.SortStudentListByList;
-import seedu.command.student.SortStudentListByName;
 import seedu.event.EventList;
 import seedu.exception.DukeException;
 import seedu.ui.UI;
