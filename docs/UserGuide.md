@@ -227,9 +227,9 @@ Command:  `attendance add`
     
 Example:
 
-    >>>     attendance add
+    >>> attendance add
     Please key in the name of event.
-    >>>     CS1010 Tutorial
+    >>> CS1010 Tutorial
     
 If the event is found, you can choose to add the student's attendance by manually key in each student, or you may choose
 the alternative provided by PAC: record using an existing name list located under StudentListCollection. 
@@ -237,22 +237,22 @@ Do note that you need to have an existing name list before you are using this sh
 The following will show a success example of *using an existing name list to add attendance*. 
 
     Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
-    >>>     yes
+    >>> yes
     Please choose the name list you wish to use by its index.
-    >>>     1    
+    >>> 1    
     Please key in the attendance status for student Jodi Doe [Y/N].
-    >>>     N
+    >>>  N
     Attendance of Jodi Doe (Absent) has been taken successfully under event Event1
     ...
 
 The following will show a success example of *creating a new attendance list*.
 
     Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
-    >>>     no
+    >>> no
     Please key in student name.
-    >>>     John Doe
+    >>> John Doe
     Please key in the student's attendance status [Y/N].
-    >>>     Y
+    >>> Y
     Attendance of John Doe (Present) has been taken successfully under event Event1
     ...
     
@@ -264,9 +264,9 @@ Command:  `attendance list`
     
 Example:
 
-    >>>     attendance list
+    >>> attendance list
     Please key in the name of event.
-    >>>     CS1010 Tutorial
+    >>> CS1010 Tutorial
     _________________________________________________________________________________________________
     | index     |  Name of Student                    |  Attendance Status                          |
     |___________|_____________________________________|_____________________________________________|
@@ -284,9 +284,9 @@ Command:  `attendance clear`
     
 Example:
 
-    >>>     attendance list
+    >>> attendance list
     Please key in the name of event.
-    >>>     CS1010 Tutorial
+    >>> CS1010 Tutorial
     Attendance List cleared for Event: event1
             
 #### 4.2.4 Sort attendance list by name: `attendance sort/by/name`
@@ -297,9 +297,9 @@ Command:  `attendance sort/by/name`
     
 Example:
 
-    >>>     attendance sort/by/name
+    >>> attendance sort/by/name
     Please key in the name of event.
-    >>>     CS1010 Tutorial
+    >>> CS1010 Tutorial
     Attendance List is sorted by name for Event: event1
     
 #### 4.2.5 Sort attendance list by status: `attendance sort/by/status`
@@ -310,9 +310,9 @@ Command:  `attendance sort/by/status`
     
 Example:
 
-    >>>     attendance list
+    >>> attendance list
     Please key in the name of event.
-    >>>     CS1010 Tutorial
+    >>> CS1010 Tutorial
     Attendance List is sorted by attendance status for Event: event1
     
 ### 4.3. Performance
@@ -324,23 +324,23 @@ Format: `performance add`
     
 Step by step guide: 
 
-    User:   performance add
-    PAC:    Please key in the name of event that you wish to access to its student's performance. 
-    User:   event
+    >>> performance add
+    Please key in the name of event that you wish to access to its student's performance. 
+    >>> event
     
 If the event is found, you can choose to add the student's result by manually key in each student, or you may choose
 the alternative provided by PAC: record using a current name list. Do note that you have to have an existing name list 
 before you are using this short cut.  
 The following will show a success example of using a current name list to add performance. 
 
-    PAC:    Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
-    User:   yes
-    PAC:    Please choose the name list you wish to use. (shows a list of list names)
-    User:   1
-    PAC:    Please key in the result for student (student1 name)
-    User:   A
-    PAC:    The result of student (student name) has been added successfully under event (event name)
-    PAC:    Please key in the result for student (student2 name)
+    Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
+    >>> yes
+    Please choose the name list you wish to use. (shows a list of list names)
+    >>> 1
+    Please key in the result for student (student1 name)
+    >>> A
+    The result of student (student name) has been added successfully under event (event name)
+    Please key in the result for student (student2 name)
     ...
 
 #### 4.3.2. Delete Performance
@@ -351,12 +351,12 @@ Format: `performance delete`
     
 Step by step guide: 
 
-    User:   performance delete
-    PAC:    Please key in the name of event that you wish to access to its student's performance. 
-    User:   event
-    PAC:    Please key in the name of student that you wish to delete his/her performance 
-    User:   name
-    PAC:    The result of student (name) has been deleted successfully under event name.
+    >>> performance delete
+    Please key in the name of event that you wish to access to its student's performance. 
+    >>>event
+    Please key in the name of student that you wish to delete his/her performance 
+    >>>name
+    The result of student (name) has been deleted successfully under event name.
 
 #### 4.3.3. View Performance List
 View the list of students' result under a certain event.  
@@ -366,10 +366,10 @@ Format: `performance list`
     
 Step by step guide: 
 
-    User:   performance delete
-    PAC:    Please key in the name of event that you wish to access to its student's performance.
-    User:   event
-    PAC:    (example of Table format list is shown below)
+    >>> performance delete
+    Please key in the name of event that you wish to access to its student's performance.
+    >>> event
+    (example of Table format list is shown below)
     _________________________________________________________________________________________________
     | index     |  Name of Student                    |  Result                                     |
     |___________|_____________________________________|_____________________________________________|
@@ -387,18 +387,18 @@ performance. Please note that you are allowed to add in duplicated names and tha
 
 Command: 
 
-    >>>     student add
+    >>> student add
     
 Examples: 
 
     What is the name of your list?
-    >>>     CS2113T Tut
+    >>> CS2113T Tut
     Please enter a student Name. If you are finished, enter done
-    >>>     John
+    >>> John
     Please enter a student Name. If you are finished, enter done
-    >>>     Jodi
+    >>> Jodi
     Please enter a student Name. If you are finished, enter done
-    >>>     done
+    >>> done
     Student List created, named : CS2113T Tut
     
 #### 4.4.2 View all existing student lists from the student list collection `student list`
@@ -406,11 +406,11 @@ View all existing students lists from student list collection.
     
 Command: 
     
-    >>>     student list
+    >>> student list
         
 Examples: 
     
-    >>>     student list
+    >>> student list
     _________________________________________________________________________________________________
     | List #1   |  CS2113T Tut                                                                       |
     |___________|____________________________________________________________________________________|
@@ -445,11 +445,11 @@ a specific student list, please use the `student delete` instead.
 
 Command: 
     
-    >>>     student clear
+    >>> student clear
         
 Examples: 
     
-    >>>     student clear
+    >>> student clear
     The Student List Collection is cleared
     
 #### 4.4.4 Clear all existing student lists from the student list collection `student delete`
@@ -458,13 +458,13 @@ lists in the student list collection, please use `student clear` instead.
 
 Command: 
     
-    >>>     student delete
+    >>> student delete
         
 Examples: 
     
-    >>>     student delete
+    >>> student delete
     Please state the index of the list you want to delete
-    >>>     1
+    >>> 1
     Here is the updated Student List Collection
     _________________________________________________________________________________________________
     | List #1   |  CS2040C                                                                           |
@@ -490,13 +490,13 @@ Find existing student list(s) from student list collection base on keyword.
     
 Command: 
     
-    >>>     student find
+    >>> student find
         
 Examples: 
     
-    >>>     student find
+    >>> student find
     Please state the list name you are searching for
-    >>>     CS
+    >>> CS
     You have 2 matched:
     Here's the Search Result(s)
     
@@ -521,9 +521,9 @@ Examples:
     |___________|____________________________________________________________________________________|
 
     
-    >>>     student find
+    >>> student find
     Please state the list name you are searching for
-    >>>     CG
+    >>> CG
     You have 1 matched:
     Here's the Search Result(s)
     
@@ -540,9 +540,9 @@ Examples:
     | 4         |  Fiona                                                                             |
     |___________|____________________________________________________________________________________|
                 
-    >>>     student find
+    >>> student find
     Please state the list name you are searching for
-    >>>     EG
+    >>> EG
     Nothing match you description : EG
 
 #### 4.4.6 Sort all names within the existing student lists from the student list collection `student sort/by/name`
@@ -551,11 +551,11 @@ in order, this command will force all existing lists to be sorted by their list 
 
 Command: 
     
-    >>>     student sort/by/name
+    >>> student sort/by/name
         
 Examples:     
 
-    >>>     student list
+    >>> student list
     _________________________________________________________________________________________________
     | List #1   |  CS2113T Tut                                                                       |
     |___________|____________________________________________________________________________________|
@@ -584,9 +584,9 @@ Examples:
     | 4         |  Fiona                                                                             |
     |___________|____________________________________________________________________________________|
     
-    >>>     student sort/by/name
+    >>> student sort/by/name
     Student List is sorted by name within the Student List Collection
-    >>>     student list
+    >>> student list
     _________________________________________________________________________________________________
     | List #1   |  CG2028                                                                            |
     |___________|____________________________________________________________________________________|
@@ -620,7 +620,7 @@ Examples:
 Sort all existing student lists from the student list collection by name. Regardless whether the lists are 
 in order, this command will force all existing lists to be sorted by their name.
     
-    >>>     student list
+    >>> student list
     _________________________________________________________________________________________________
     | List #1   |  CG2028                                                                            |
     |___________|____________________________________________________________________________________|
@@ -649,9 +649,9 @@ in order, this command will force all existing lists to be sorted by their name.
     | 2         |  Jodi                                                                              |
     |___________|____________________________________________________________________________________|
     
-    >>>     student sort/by/list
+    >>> student sort/by/list
     StudentList sorted by name within the lists
-    >>>     student list
+    >>> student list
     _________________________________________________________________________________________________
     | List #1   |  CG2028                                                                            |
     |___________|____________________________________________________________________________________|
@@ -710,13 +710,13 @@ Examples:
 ## 5. Possible Console Messages and Reasons:  
 If event list is empty    
         
-    PAC:    The event list is empty
+    The event list is empty
 If event is not found in the list
            
-    PAC:    Event is not found in the list.
+    Event is not found in the list.
 If students' name list is empty
         
-    PAC:    There is no existing student list.
+    There is no existing student list.
            
 ## 6. FAQ
 
