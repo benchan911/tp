@@ -289,28 +289,32 @@ Example:
     >>> CS1010 Tutorial
     Attendance List cleared for Event: event1
             
-#### 4.2.4 Sort attendance list by name: `attendance sort/by/name`
+#### 4.2.4 Sort attendance list by name: `attendance sort`
 
 Sort the attendance list by name in alphabetical order under a certain event.  
 
-Command:  `attendance sort/by/name`
+Command:  `attendance sort`
     
 Example:
 
-    >>> attendance sort/by/name
+    >>> attendance sort
+    Please Key in either 'name' or 'status'.
+    >>> name
     Please key in the name of event.
     >>> CS1010 Tutorial
     Attendance List is sorted by name for Event: event1
     
-#### 4.2.5 Sort attendance list by status: `attendance sort/by/status`
+#### 4.2.5 Sort attendance list by status: `attendance sort`
 
 Sort the attendance list by attendance status under a certain event with student that are absent on the top.  
 
-Command:  `attendance sort/by/status`
+Command:  `attendance sort`
     
 Example:
 
-    >>> attendance list
+    >>> attendance sort
+    Please Key in either 'name' or 'status'.
+    >>> name
     Please key in the name of event.
     >>> CS1010 Tutorial
     Attendance List is sorted by attendance status for Event: event1
@@ -545,7 +549,7 @@ Examples:
     >>> EG
     Nothing match you description : EG
 
-#### 4.4.6 Sort all names within the existing student lists from the student list collection `student sort/by/name`
+#### 4.4.6 Sort all names within the existing student lists from the student list collection `student sort`
 Sort all existing student lists from the student list collection by name. Regardless whether the lists are 
 in order, this command will force all existing lists to be sorted by their list name within the student list collection.
 
@@ -584,7 +588,9 @@ Examples:
     | 4         |  Fiona                                                                             |
     |___________|____________________________________________________________________________________|
     
-    >>> student sort/by/name
+    >>> student sort
+    Please Key in either 'name' or 'list'.
+    >>> name
     Student List is sorted by name within the Student List Collection
     >>> student list
     _________________________________________________________________________________________________
@@ -616,7 +622,7 @@ Examples:
     |___________|____________________________________________________________________________________|
     
     
-#### 4.4.7 Sort all existing student lists from the student list collection by name `student sort/by/list`
+#### 4.4.7 Sort all existing student lists from the student list collection by name `student sort`
 Sort all existing student lists from the student list collection by name. Regardless whether the lists are 
 in order, this command will force all existing lists to be sorted by their name.
     
@@ -649,7 +655,9 @@ in order, this command will force all existing lists to be sorted by their name.
     | 2         |  Jodi                                                                              |
     |___________|____________________________________________________________________________________|
     
-    >>> student sort/by/list
+    >>> student sort
+    Please Key in either 'name' or 'list'.
+    >>> list
     StudentList sorted by name within the lists
     >>> student list
     _________________________________________________________________________________________________

@@ -7,6 +7,8 @@ import seedu.command.attendance.ClearAttendanceList;
 import seedu.command.attendance.SortAttendanceListByName;
 import seedu.command.attendance.ViewAttendanceList;
 import seedu.command.attendance.SortAttendanceListByStatus;
+import seedu.command.student.SortStudentListByList;
+import seedu.command.student.SortStudentListByName;
 import seedu.event.EventList;
 import seedu.exception.DukeException;
 import seedu.ui.UI;
@@ -78,14 +80,35 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
             eventName = ui.getEventNameForAttendance();
             attendances = getAttendance(eventName);
             return new ClearAttendanceList(attendances, eventName);
-        case "sort/by/name":
-            eventName = ui.getEventNameForAttendance();
-            attendances = getAttendance(eventName);
-            return new SortAttendanceListByName(attendances, eventName);
-        case "sort/by/status":
-            eventName = ui.getEventNameForAttendance();
-            attendances = getAttendance(eventName);
-            return new SortAttendanceListByStatus(attendances, eventName);
+
+        case "sort":
+            try {
+                ui.displayStudentMessage("Please Key in either 'name' or 'status'.");
+                ui.readUserInput();
+                String sortType = ui.getUserInput();
+                switch (sortType) {
+                case "name":
+                    try {
+                        eventName = ui.getEventNameForAttendance();
+                        attendances = getAttendance(eventName);
+                        return new SortAttendanceListByName(attendances, eventName);
+                    } catch (Exception e) {
+                        throw new DukeException("Attendance Command Sort By Name failed.");
+                    }
+                case "status":
+                    try {
+                        eventName = ui.getEventNameForAttendance();
+                        attendances = getAttendance(eventName);
+                        return new SortAttendanceListByStatus(attendances, eventName);
+                    } catch (Exception e) {
+                        throw new DukeException("Attendance Command Sort By Status failed.");
+                    }
+                default:
+                    throw new DukeException("Unknown Attendance Sort Command");
+                }
+            } catch (Exception e) {
+                throw new DukeException("Attendance Command Sort failed.");
+            }
         default:
             throw new DukeException("Attendance: Unknown command.");
         }
