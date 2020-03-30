@@ -78,14 +78,14 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
             eventName = ui.getEventNameForAttendance();
             attendances = getAttendance(eventName);
             return new ClearAttendanceList(attendances, eventName);
-        case "sort":
+        case "sort/by/name":
             eventName = ui.getEventNameForAttendance();
             attendances = getAttendance(eventName);
-            return new SortAttendanceListByName(attendances);
-        case "sort/":
+            return new SortAttendanceListByName(attendances, eventName);
+        case "sort/by/status":
             eventName = ui.getEventNameForAttendance();
             attendances = getAttendance(eventName);
-            return new SortAttendanceListByStatus(attendances);
+            return new SortAttendanceListByStatus(attendances, eventName);
         default:
             throw new DukeException("Attendance: Unknown command.");
         }

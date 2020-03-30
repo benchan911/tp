@@ -102,9 +102,9 @@ public class UI {
                 + "your Event list.\n", eventType, eventName);
     }
 
-    public void addAttendanceMessage(String studentName, String eventName) {
-        System.out.printf("Attendance of %s has been taken successfully"
-                + " under event %s.\n", studentName, eventName);
+    public void addAttendanceMessage(String studentName, String attendanceStatus, String eventName) {
+        System.out.printf("Attendance of %s (%s) has been taken successfully"
+                + " under event %s.\n", studentName, attendanceStatus, eventName);
     }
 
     public void addPerformanceMessage(String studentName, String taskName) {
@@ -241,6 +241,14 @@ public class UI {
 
     public void clearAttendanceMessage(String eventName) {
         System.out.println("Attendance List cleared for Event: " + eventName);
+    }
+
+    public void sortAttendanceByStatus(String eventName) {
+        System.out.println("Attendance List is sorted by name for Event: " + eventName);
+    }
+
+    public void sortAttendanceByName(String eventName) {
+        System.out.println("Attendance List is sorted by attendance status for Event:  " + eventName);
     }
 
 

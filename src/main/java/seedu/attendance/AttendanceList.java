@@ -28,7 +28,7 @@ public class AttendanceList {
 
     public void addToList(Attendance attendance, String eventName) {
         attendanceList.add(attendance);
-        ui.addAttendanceMessage(attendance.studentName, eventName);
+        ui.addAttendanceMessage(attendance.studentName, attendance.getAttendanceStatus(), eventName);
     }
 
     public void printList() throws DukeException {

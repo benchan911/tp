@@ -214,6 +214,9 @@ Expected outcome:
     Your Event was edited from |Event: lunch with colleague, time: Mar 23 2020 1800, venue: Marina Bay Sands| to |Event: lunch by myself, venue: home|.
 
 ### 4.2 Attendance
+This section for attendance related commands is done in chronological order. Please follow the numbering to get
+a clearer understanding on how you can use the commands.
+
 #### 4.2.1 Add students’ attendance to event: attendance `attendance add`
 
 Add a student’s attendance to the performance list.  
@@ -239,7 +242,7 @@ The following will show a success example of *using an existing name list to add
     >>>     1    
     Please key in the attendance status for student Jodi Doe [Y/N].
     >>>     N
-    Jodi Doe is absent for event CS1010 Tutorial
+    Attendance of Jodi Doe (Absent) has been taken successfully under event Event1
     ...
 
 The following will show a success example of *creating a new attendance list*.
@@ -250,7 +253,7 @@ The following will show a success example of *creating a new attendance list*.
     >>>     John Doe
     Please key in the student's attendance status [Y/N].
     >>>     Y
-    John Doe is present for event CS1010 Tutorial.
+    Attendance of John Doe (Present) has been taken successfully under event Event1
     ...
     
 #### 4.2.2 View attendance list: `attendance list`
