@@ -244,7 +244,8 @@ The following will show a success example of *using an existing name list to add
     >>> yes
     Please choose the name list you wish to use by its index.
     >>> 1    
-    Please key in the attendance status for student Jodi Doe [Y/N].
+    To mark the student as present, please use 'y' or 'Y'.
+    By default the student will be marked as absent,
     >>>  N
     Attendance of Jodi Doe (Absent) has been taken successfully under event Event1
     ...
@@ -255,7 +256,8 @@ The following will show a success example of *creating a new attendance list*.
     >>> no
     Please key in student name.
     >>> John Doe
-    Please key in the student's attendance status [Y/N].
+    To mark the student as present, please use 'y' or 'Y'.
+    By default the student will be marked as absent,
     >>> Y
     Attendance of John Doe (Present) has been taken successfully under event Event1
     ...
