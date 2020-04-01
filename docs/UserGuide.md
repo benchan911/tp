@@ -46,6 +46,8 @@
 5. [Possible Console Messages and Reasons](#5-possible-console-messages-and-reasons)           
 6. [FAQ](#6-faq)  
 7. [Command Summary](#7-command-summary)  
+8. [Glossary](#8-glossary)
+9. [Contact us](#9-contact-us)
   
 ## 1. Introduction
 
@@ -750,5 +752,10 @@ Future patches will allow users to save their data and use it on another compute
 * Delete event `event delete i/INDEX`
 * View calendar `calendar s/SEMESTER ay/YEAR_ONE-YEAR_TWO`
 
-## 8. Contact Us
+## 8. Glossary
+| Term | Meaning|
+|-----------|---------------|
+|studentListCollection | A collection of student list |
+
+## 9. Contact Us
 If you have further queries or feedback on Pac, please contact us at [contact_us@pac.com](contact_us@Pac.com)
