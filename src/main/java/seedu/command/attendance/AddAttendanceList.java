@@ -54,8 +54,8 @@ public class AddAttendanceList extends Command {
      */
     private void createNewList() throws DukeException {
         int studentNumber = 0;
-        String name = "";
-        String status = "";
+        String name = null;
+        String status = null;
         while (!status.equals("done")) {
             System.out.println("Please key in student name.");
             ui.readUserInput();
@@ -63,7 +63,8 @@ public class AddAttendanceList extends Command {
             if (name.equals("done")) {
                 break;
             }
-            System.out.println("Please key in the student's attendance status [Y/N].");
+            System.out.println("To mark the student as present, please use 'y' or 'Y'.");
+            System.out.println("By default the student will be marked as absent,");
             ui.readUserInput();
             status = ui.getUserInput();
             attendances.addToList(new Attendance(name,status), eventName);
