@@ -388,17 +388,18 @@ Step by step guide:
 This section for student related commands is done in chronological order. Please follow the numbering to get
 a clearer understanding on how you can use the commands.
 
-#### 4.4.1. Add New Student List
+#### 4.4.1. Add New Student List `student.list add`
 
 Creates a student list and adds it to the collection of student list that can be used for adding attendance and 
 performance. Please note that you are allowed to add in duplicated names and that all names are CASE-SENSITIVE. 
 
 Command: 
 
-    >>> student add
+    >>> student.list add
     
 Examples: 
 
+    >>> student.list add
     What is the name of your list?
     >>> CS2113T Tut
     Please enter a student Name. If you are finished, enter done
@@ -409,16 +410,16 @@ Examples:
     >>> done
     Student List created, named : CS2113T Tut
     
-#### 4.4.2 View all existing student lists from the student list collection `student list`
+#### 4.4.2 View all existing student lists from the student list collection `student.list view`
 View all existing students lists from student list collection.
     
 Command: 
     
-    >>> student list
+    >>> student.list view
         
 Examples: 
     
-    >>> student list
+    >>> student.list view
     _________________________________________________________________________________________________
     | List #1   |  CS2113T Tut                                                                       |
     |___________|____________________________________________________________________________________|
@@ -447,30 +448,30 @@ Examples:
     | 4         |  Fiona                                                                             |
     |___________|____________________________________________________________________________________|
                 
-#### 4.4.3 Clear all existing student lists from the student list collection `student clear`
+#### 4.4.3 Clear all existing student lists from the student list collection `student.list clear`
 Clear all existing student lists from the student list collection. This is a clear all command. If you wish to delete 
 a specific student list, please use the `student delete` instead.
 
 Command: 
     
-    >>> student clear
+    >>> student.list clear
         
 Examples: 
     
     >>> student clear
     The Student List Collection is cleared
     
-#### 4.4.4 Clear all existing student lists from the student list collection `student delete`
+#### 4.4.4 Clear all existing student lists from the student list collection `student.list delete`
 Delete a specific student list from the student list collection base on its index. If you wish to delete all student 
 lists in the student list collection, please use `student clear` instead.
 
 Command: 
     
-    >>> student delete
+    >>> student.list delete
         
 Examples: 
     
-    >>> student delete
+    >>> student.list delete
     Please state the index of the list you want to delete
     >>> 1
     Here is the updated Student List Collection
@@ -493,16 +494,16 @@ Examples:
     |___________|____________________________________________________________________________________|
                 
     
-#### 4.4.5 Find existing student list(s) from the student list collection `student find`
+#### 4.4.5 Find existing student list(s) from the student list collection `student.list find`
 Find existing student list(s) from student list collection base on keyword.
     
 Command: 
     
-    >>> student find
+    >>> student.list find
         
 Examples: 
     
-    >>> student find
+    >>> student.list find
     Please state the list name you are searching for
     >>> CS
     You have 2 matched:
@@ -529,7 +530,7 @@ Examples:
     |___________|____________________________________________________________________________________|
 
     
-    >>> student find
+    >>> student.list find
     Please state the list name you are searching for
     >>> CG
     You have 1 matched:
@@ -548,22 +549,22 @@ Examples:
     | 4         |  Fiona                                                                             |
     |___________|____________________________________________________________________________________|
                 
-    >>> student find
+    >>> student.list find
     Please state the list name you are searching for
     >>> EG
     Nothing match you description : EG
 
-#### 4.4.6 Sort all names within the existing student lists from the student list collection `student sort`
+#### 4.4.6 Sort all names within the existing student lists from the student list collection `student.list sort`
 Sort all existing student lists from the student list collection by name. Regardless whether the lists are 
 in order, this command will force all existing lists to be sorted by their list name within the student list collection.
 
 Command: 
     
-    >>> student sort
+    >>> student.list sort
         
 Examples:     
 
-    >>> student list
+    >>> student.list list
     _________________________________________________________________________________________________
     | List #1   |  CS2113T Tut                                                                       |
     |___________|____________________________________________________________________________________|
@@ -592,11 +593,11 @@ Examples:
     | 4         |  Fiona                                                                             |
     |___________|____________________________________________________________________________________|
     
-    >>> student sort
+    >>> student.list sort
     Please Key in either 'name' or 'list'.
     >>> name
     Student List is sorted by name within the Student List Collection
-    >>> student list
+    >>> student.list view
     _________________________________________________________________________________________________
     | List #1   |  CG2028                                                                            |
     |___________|____________________________________________________________________________________|
@@ -626,11 +627,11 @@ Examples:
     |___________|____________________________________________________________________________________|
     
     
-#### 4.4.7 Sort all existing student lists from the student list collection by name `student sort`
+#### 4.4.7 Sort all existing student lists from the student list collection by name `student.list sort`
 Sort all existing student lists from the student list collection by name. Regardless whether the lists are 
 in order, this command will force all existing lists to be sorted by their name.
     
-    >>> student sort
+    >>> student.list sort
     _________________________________________________________________________________________________
     | List #1   |  CG2028                                                                            |
     |___________|____________________________________________________________________________________|
@@ -659,11 +660,11 @@ in order, this command will force all existing lists to be sorted by their name.
     | 2         |  Jodi                                                                              |
     |___________|____________________________________________________________________________________|
     
-    >>> student sort
+    >>> student.list sort
     Please Key in either 'name' or 'list'.
     >>> list
     StudentList sorted by name within the lists
-    >>> student list
+    >>> student.list view
     _________________________________________________________________________________________________
     | List #1   |  CG2028                                                                            |
     |___________|____________________________________________________________________________________|
