@@ -42,9 +42,15 @@ public class FindStudentList extends Command {
         }
     }
 
+    private void displayStudentList() {
+        ui.printStudentListCollection();
+    }
 
     @Override
     public void execute() throws PacException {
+        displayStudentList();
         find();
     }
+
+
 }
