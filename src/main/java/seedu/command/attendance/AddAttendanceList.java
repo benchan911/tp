@@ -72,7 +72,7 @@ public class AddAttendanceList extends Command {
             newStudentList.addToList(name);
             studentNumber++;
         }
-        studentListCollection.add(newStudentList);
+        studentListCollection.push(newStudentList);
         UI.display("You have successfully added "
                 + studentNumber + " to the attendance list.\n");
     }
