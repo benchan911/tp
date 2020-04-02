@@ -63,11 +63,16 @@ public class AddAttendanceList extends Command {
             if (name.equals("done")) {
                 break;
             }
-            UI.display("Please key in the student's attendance status [Y/N].");
-            ui.readUserInput();
-            status = ui.getUserInput();
-            attendances.addToList(new Attendance(name,status), eventName);
-            studentNumber++;
+            if (attendances.isDuplicate(name)) {
+                UI.display("Duplicated name found, student name : " + name + " not added");
+                continue;
+            } else {
+                UI.display("Please key in the student's attendance status [Y/N].");
+                ui.readUserInput();
+                status = ui.getUserInput();
+                attendances.addToList(new Attendance(name, status), eventName);
+                studentNumber++;
+            }
         }
         UI.display("You have successfully added "
                 + studentNumber + " to the attendance list.\n");
