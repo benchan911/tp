@@ -64,7 +64,7 @@ public class AddAttendanceList extends Command {
                 break;
             }
             if (attendances.isDuplicate(name)) {
-                UI.display("Duplicated name found, student name : " + name + " not added");
+                UI.display("Duplicated name found, student name : [ " + name + " ] not added");
                 continue;
             } else {
                 UI.display("Please key in the student's attendance status [Y/N].");
