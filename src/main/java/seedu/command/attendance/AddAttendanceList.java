@@ -86,7 +86,7 @@ public class AddAttendanceList extends Command {
                 }
                 UI.display("To mark the student as present, please use 'y' or 'Y'.");
                 UI.display("By default the student will be marked as absent,"
-                + " if any other input is given.");
+                    + " if any other input is given.");
                 ui.readUserInput();
                 status = ui.getUserInput();
                 attendances.addToList(new Attendance(name, status), eventName);
