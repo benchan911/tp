@@ -21,7 +21,7 @@ public class ViewAttendanceList extends Command {
             if (attendances.isEmpty()) {
                 UI.display("Attendance List is empty");
             } else {
-                attendances.printList();
+                attendances.displayAttendanceList();
             }
         } catch (Exception e) {
             throw new PacException("Attendance List fail to view.");
