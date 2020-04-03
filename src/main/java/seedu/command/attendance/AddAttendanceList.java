@@ -85,8 +85,7 @@ public class AddAttendanceList extends Command {
                     break;
                 }
                 if (attendances.isDuplicate(name)) {
-                UI.display("Duplicated name found, student name : [ " + name + " ] not added");
-                continue;
+                    UI.display("Duplicated name found, student name : [ " + name + " ] not added");
                 } else {
                     UI.display("To mark the student as present, please use 'y' or 'Y'.");
                     UI.display("By default the student will be marked as absent,"
