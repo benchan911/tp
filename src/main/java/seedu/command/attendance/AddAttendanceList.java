@@ -5,6 +5,7 @@ import seedu.attendance.AttendanceList;
 import seedu.command.Command;
 import seedu.exception.PacException;
 import seedu.student.StudentList;
+import seedu.parser.AttendanceParser;
 import seedu.ui.UI;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import static seedu.pac.Pac.studentListCollection;
  */
 public class AddAttendanceList extends Command {
 
+    protected AttendanceParser attendanceParser = new AttendanceParser();
     protected AttendanceList attendances;
     protected String eventName;
     private UI ui;
@@ -58,19 +60,37 @@ public class AddAttendanceList extends Command {
         String name = "";
         String status = "";
         StudentList newStudentList = new StudentList(eventName);
-        while (!status.equals("done")) {
-            UI.display("Please key in student name.");
-            ui.readUserInput();
-            name = ui.getUserInput();
-            if (name.equals("done")) {
-                break;
+        String input = "";
+
+        UI.display("Do you wish to have line by line prompt? If so, please enter 'yes'");
+        if (isNewUser()) {
+            while (!input.toLowerCase().equals("done")) {
+                UI.display("Please key following format:\n"
+                    + "n/Name p/Status[Y/N]");
+                ui.readUserInput();
+                input = ui.getUserInput();
+                if (input.equals("done")) {
+                    break;
+                }
+                attendances.addToList(attendanceParser.parseAttendance(input), eventName);
+                newStudentList.addToList(name);
+                studentNumber++;
             }
-            UI.display("Please key in the student's attendance status [Y/N].");
-            ui.readUserInput();
-            status = ui.getUserInput();
-            attendances.addToList(new Attendance(name,status), eventName);
-            newStudentList.addToList(name);
-            studentNumber++;
+        } else {
+            while (!status.equals("done")) {
+                UI.display("Please key in student name.");
+                ui.readUserInput();
+                name = ui.getUserInput();
+                if (name.equals("done")) {
+                    break;
+                }
+                UI.display("Please key in the student's attendance status [Y/N].");
+                ui.readUserInput();
+                status = ui.getUserInput();
+                attendances.addToList(new Attendance(name, status), eventName);
+                newStudentList.addToList(name);
+                studentNumber++;
+            }
         }
         studentListCollection.push(newStudentList);
         UI.display("You have successfully added "
@@ -96,7 +116,16 @@ public class AddAttendanceList extends Command {
      */
     private boolean isByNameList() {
         String reply = ui.getStringInput();
-        if (reply.contains("yes")) {
+        if (reply.toLowerCase().contains("yes")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean isNewUser() {
+        String reply = ui.getStringInput();
+        if (reply.toLowerCase().contains("yes")) {
             return true;
         } else {
             return false;
