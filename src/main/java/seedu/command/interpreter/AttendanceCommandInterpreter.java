@@ -95,7 +95,8 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
             }
         case "sort":
             try {
-                if (sortByName()) {
+                switch(sortType()) {
+                case "name":
                     try {
                         eventName = ui.getEventNameForAttendance();
                         attendances = getAttendance(eventName);
@@ -103,7 +104,7 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
                     } catch (Exception e) {
                         throw new PacException("Attendance Command Sort By Name failed.");
                     }
-                } else if (sortByStatus()) {
+                case "status":
                     try {
                         eventName = ui.getEventNameForAttendance();
                         attendances = getAttendance(eventName);
@@ -111,7 +112,7 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
                     } catch (Exception e) {
                         throw new PacException("Attendance Command Sort By Status failed.");
                     }
-                } else {
+                default:
                     throw new PacException("Unknown Attendance Sort Command");
                 }
             } catch (Exception e) {
@@ -126,23 +127,9 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
         return eventList.getEvent(eventName).getAttendanceList();
     }
 
-    private boolean sortByName() {
+    private String sortType() {
         UI.display("Please Key in either 'name' or 'status'.");
         ui.readUserInput();
-        String sortType = ui.getUserInput();
-        if (sortType.toLowerCase().equals("name")) {
-            return true;
-        }
-        return false;
-    }
-
-    private boolean sortByStatus() {
-        UI.display("Please Key in either 'name' or 'status'.");
-        ui.readUserInput();
-        String sortType = ui.getUserInput();
-        if (sortType.toLowerCase().equals("status")) {
-            return true;
-        }
-        return false;
+        return ui.getUserInput().toLowerCase().trim();
     }
 }
