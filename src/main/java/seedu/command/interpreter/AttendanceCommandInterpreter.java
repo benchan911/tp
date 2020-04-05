@@ -68,7 +68,7 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
         logger.info("My First Log");
         logger.fine("My Second Log");
 
-        switch (commandType.toLowerCase()) {
+        switch (commandType.toLowerCase().trim()) {
         case "add":
             try {
                 eventName = ui.getEventNameForAttendance();
