@@ -95,7 +95,7 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
             }
         case "sort":
             try {
-                switch(sortType()) {
+                switch (sortType()) {
                 case "name":
                     try {
                         eventName = ui.getEventNameForAttendance();
