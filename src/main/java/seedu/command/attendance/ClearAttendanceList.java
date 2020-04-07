@@ -25,12 +25,8 @@ public class ClearAttendanceList extends Command {
      * @throws PacException If attendanceList fail to clear.
      */
     private void clear() throws PacException {
-        try {
-            attendanceList.clearList();
-            ui.clearAttendanceMessage(eventName);
-        } catch (Exception e) {
-            throw new PacException("Attendance List fail to clear");
-        }
+        attendanceList.clearList();
+        ui.clearAttendanceMessage(eventName);
     }
 
     @Override

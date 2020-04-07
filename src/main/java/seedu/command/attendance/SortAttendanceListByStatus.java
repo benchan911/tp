@@ -24,9 +24,9 @@ public class SortAttendanceListByStatus extends Command {
     /**
      * Method to sort an attendance list according to status.
      */
-    private void sort() {
+    private void sort() throws PacException {
         if (attendanceList.isEmpty()) {
-            UI.display("An empty list cannot be sorted");
+            throw new PacException("An empty list cannot be sorted");
         } else {
             attendanceList.sortByStatus();
             ui.sortAttendanceByStatus(eventName);

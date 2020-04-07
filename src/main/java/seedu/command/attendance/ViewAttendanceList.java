@@ -21,14 +21,10 @@ public class ViewAttendanceList extends Command {
      * @throws PacException If AttendanceList is empty or AttendanceList fail to view.
      */
     private void view() throws PacException {
-        try {
-            if (attendanceList.isEmpty()) {
-                throw new PacException("Attendance List is empty");
-            } else {
-                attendanceList.displayAttendanceList();
-            }
-        } catch (Exception e) {
-            throw new PacException("Attendance List fail to view.");
+        if (attendanceList.isEmpty()) {
+            throw new PacException("Attendance List is empty");
+        } else {
+            attendanceList.displayAttendanceList();
         }
     }
 

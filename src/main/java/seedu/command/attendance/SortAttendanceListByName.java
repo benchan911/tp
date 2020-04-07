@@ -24,9 +24,9 @@ public class SortAttendanceListByName extends Command {
     /**
      * Method to sort an attendance list according to name.
      */
-    private void sort() {
+    private void sort() throws PacException {
         if (attendanceList.isEmpty()) {
-            UI.display("An empty list cannot be sorted");
+            throw new PacException("An empty list cannot be sorted");
         } else {
             attendanceList.sortByName();
             ui.sortAttendanceByName(eventName);
