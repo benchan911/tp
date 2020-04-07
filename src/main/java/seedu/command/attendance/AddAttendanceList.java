@@ -117,8 +117,8 @@ public class AddAttendanceList extends Command {
             if (attendanceList.isDuplicate(studentName)) {
                 throw new PacException("Duplicated name found, student name : [ " + studentName + " ] not added");
             } else {
-                UI.display("To mark the student as present, please use 'y' or 'Y'.");
-                UI.display("By default the student will be marked as absent,"
+                UI.display("To mark the student as present, please use 'y' or 'Y'.\n"
+                        + "By default the student will be marked as absent,"
                         + " if any other input is given.");
                 ui.readUserInput();
                 status = ui.getUserInput();
