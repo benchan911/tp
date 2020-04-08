@@ -74,4 +74,3 @@ The user interacts with it using a Command Line Interface (CLI).
 [#116](https://github.com/AY1920S2-CS2113T-T12-4/tp/pull/116), 
 [#164](https://github.com/AY1920S2-CS2113T-T12-4/tp/pull/164), 
 [#166](https://github.com/AY1920S2-CS2113T-T12-4/tp/pull/166) 
-
