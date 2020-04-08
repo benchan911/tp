@@ -95,11 +95,9 @@ public class Help extends UI {
         display("To find an existing studentList, input:\n\t"
                 + "student.list find\n");
         display("To list all existing studentList, input:\n\t"
-                + "student.list list\n");
-        display("To sort all existing studentList by their names, input:\n\t"
-                + "student.list sort/by/name\n");
-        display("To sort all name within the existing studentList, input:\n\t"
-                + "student.list sort/by/list\n");
+                + "student.list view\n");
+        display("To sort all existing studentList, input:\n\t"
+                + "student.list sort\n");
         display("Enter 'list' for command format list. To exit help function, enter 'back'\n");
     }
 }
