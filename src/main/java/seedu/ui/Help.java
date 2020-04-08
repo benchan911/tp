@@ -87,17 +87,17 @@ public class Help extends UI {
 
     public void printStudentListHelp() {
         display("To create a new studentList for future events, input:\n\t"
-                + "student.list add\n");
+                + "studentlist add\n");
         display("To delete an existing studentList, input:\n\t"
-                + "student.list delete (index)\n");
+                + "studentlist delete (index)\n");
         display("To clear all existing studentList, input:\n\t"
-                + "student.list clear\n");
+                + "studentlist clear\n");
         display("To find an existing studentList, input:\n\t"
-                + "student.list find\n");
+                + "studentlist find\n");
         display("To list all existing studentList, input:\n\t"
-                + "student.list view\n");
+                + "studentlist view\n");
         display("To sort all existing studentList, input:\n\t"
-                + "student.list sort\n");
+                + "studentlist sort\n");
         display("Enter 'list' for command format list. To exit help function, enter 'back'\n");
     }
 }
