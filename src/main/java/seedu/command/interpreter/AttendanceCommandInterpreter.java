@@ -27,29 +27,9 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
     String eventName;
     UI ui;
 
-    private static final Logger logger = Logger.getLogger(AttendanceCommandInterpreter.class.getName());
-
     public AttendanceCommandInterpreter(EventList eventList) {
         super(eventList);
         this.ui = new UI();
-    }
-
-    public static void setupLogger() throws PacException {
-        LogManager.getLogManager().reset();
-        logger.setLevel(Level.ALL);
-
-        ConsoleHandler ch = new ConsoleHandler();
-        ch.setLevel(Level.SEVERE);
-        logger.addHandler(ch);
-
-        try {
-            FileHandler fh = new FileHandler("myLogger.log");
-            fh.setLevel(Level.FINE);
-            logger.addHandler(fh);
-        } catch (IOException e) {
-            throw new PacException(e.getMessage());
-        }
-
     }
 
     /**
@@ -61,12 +41,6 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
     public Command decideCommand(String commandDescription) throws PacException {
 
         String commandType = getFirstWord(commandDescription);
-
-        assert commandType.isBlank() : "Attendance: Unknown command";
-
-        AttendanceCommandInterpreter.setupLogger();
-        logger.info("My First Log");
-        logger.fine("My Second Log");
 
         switch (commandType.toLowerCase().trim()) {
         case "add":
