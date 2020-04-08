@@ -41,57 +41,18 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
     public Command decideCommand(String commandDescription) throws PacException {
 
         String commandType = getFirstWord(commandDescription);
+        eventName = ui.getEventNameForAttendance();
+        attendances = getAttendance(eventName);
 
         switch (commandType.toLowerCase().trim()) {
         case "add":
-            try {
-                eventName = ui.getEventNameForAttendance();
-                attendances = getAttendance(eventName);
-                return new AddAttendanceList(attendances, eventName);
-            } catch (Exception e) {
-                throw new PacException("Attendance Command Add failed.");
-            }
+            return new AddAttendanceList(attendances, eventName);
         case "view":
-            try {
-                eventName = ui.getEventNameForAttendance();
-                attendances = getAttendance(eventName);
-                return new ViewAttendanceList(attendances);
-            }  catch (Exception e) {
-                throw new PacException("Attendance Command View failed.");
-            }
+            return new ViewAttendanceList(attendances);
         case "clear":
-            try {
-                eventName = ui.getEventNameForAttendance();
-                attendances = getAttendance(eventName);
-                return new ClearAttendanceList(attendances, eventName);
-            } catch (Exception e) {
-                throw new PacException("Attendance Command Clear failed.");
-            }
+            return new ClearAttendanceList(attendances, eventName);
         case "sort":
-            try {
-                switch (sortType()) {
-                case "name":
-                    try {
-                        eventName = ui.getEventNameForAttendance();
-                        attendances = getAttendance(eventName);
-                        return new SortAttendanceListByName(attendances, eventName);
-                    } catch (Exception e) {
-                        throw new PacException("Attendance Command Sort By Name failed.");
-                    }
-                case "status":
-                    try {
-                        eventName = ui.getEventNameForAttendance();
-                        attendances = getAttendance(eventName);
-                        return new SortAttendanceListByStatus(attendances, eventName);
-                    } catch (Exception e) {
-                        throw new PacException("Attendance Command Sort By Status failed.");
-                    }
-                default:
-                    throw new PacException("Unknown Attendance Sort Command");
-                }
-            } catch (Exception e) {
-                throw new PacException("Attendance Command Sort failed.");
-            }
+            return sortCommand();
         default:
             throw new PacException("Attendance: Unknown command.");
         }
@@ -105,5 +66,16 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
         UI.display("Please Key in either 'name' or 'status'.");
         ui.readUserInput();
         return ui.getUserInput().toLowerCase().trim();
+    }
+
+    private Command sortCommand() throws PacException {
+        switch (sortType()) {
+        case "name":
+            return new SortAttendanceListByName(attendances, eventName);
+        case "status":
+            return new SortAttendanceListByStatus(attendances, eventName);
+        default:
+            throw new PacException("Unknown Attendance Sort Command");
+        }
     }
 }
