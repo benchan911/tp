@@ -182,19 +182,15 @@ public class AddAttendanceList extends Command {
     private ArrayList<String> fetchAttendanceList() throws PacException {
         UI.display("Please state the index of the studentList that you wish to import");
         ui.readUserInput();
-        try {
-            int index = Integer.parseInt(ui.getUserInput());
-            return studentListCollection.get(index - 1).getStudentList();
-        } catch (Exception e) {
-            throw new PacException("Invalid Format");
-        }
+        int index = Integer.parseInt(ui.getUserInput());
+        return studentListCollection.get(index - 1).getStudentList();
     }
 
     @Override
     public void execute() throws PacException {
         try {
             addToList();
-        } catch (Exception e) {
+        } catch (PacException e) {
             throw new PacException("Attendance List fail to add.\n"
                     + "If you wish to add attendance again,\n"
                     + "please type the command 'attendance add' again");

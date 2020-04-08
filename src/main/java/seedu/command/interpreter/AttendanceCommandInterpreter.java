@@ -11,21 +11,14 @@ import seedu.event.EventList;
 import seedu.exception.PacException;
 import seedu.ui.UI;
 
-import java.io.IOException;
-import java.util.logging.Logger;
-import java.util.logging.ConsoleHandler;
-import java.util.logging.FileHandler;
-import java.util.logging.Level;
-import java.util.logging.LogManager;
-
 /**
  * To interpret the attendance command.
  */
 public class AttendanceCommandInterpreter extends CommandInterpreter {
 
-    AttendanceList attendances;
-    String eventName;
-    UI ui;
+    protected AttendanceList attendances;
+    protected String eventName;
+    protected UI ui;
 
     public AttendanceCommandInterpreter(EventList eventList) {
         super(eventList);
