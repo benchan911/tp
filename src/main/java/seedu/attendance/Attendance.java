@@ -36,6 +36,14 @@ public class Attendance {
         return "Absent";
     }
 
+    public void setNewStatus(String input) {
+        if (input.toLowerCase().trim().equals("y")) {
+            isPresent = "Present";
+        } else {
+            isPresent = "Absent";
+        }
+    }
+
     /**
      * Retrieves the name of the student.
      * @return studentName the name of the student.
@@ -83,4 +91,8 @@ public class Attendance {
             return listName1.compareTo(listName2);
         }
     };
+
+    public void setName(String input) {
+        this.studentName = input;
+    }
 }
