@@ -35,7 +35,7 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
         this.ui = new UI();
     }
 
-    public static void setupLogger() throws PacException {
+    static void setupLogger() throws PacException {
         LogManager.getLogManager().reset();
         logger.setLevel(Level.ALL);
 
@@ -68,7 +68,8 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
         assert commandType.isBlank() : "Attendance: Unknown command";
 
         AttendanceCommandInterpreter.setupLogger();
-        logger.info("My First Log");
+        logger.info("Attendance List Log");
+        logger.finest(commandType);
 
         switch (commandType.toLowerCase().trim()) {
         case "add":
