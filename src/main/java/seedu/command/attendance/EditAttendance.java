@@ -3,10 +3,12 @@ package seedu.command.attendance;
 import seedu.attendance.AttendanceList;
 import seedu.command.Command;
 import seedu.exception.PacException;
+import seedu.ui.DisplayTable;
 import seedu.ui.UI;
 
 public class EditAttendance extends Command {
 
+    protected DisplayTable displayTable;
     protected UI ui;
     protected AttendanceList attendanceList;
     protected String eventName;
@@ -16,6 +18,7 @@ public class EditAttendance extends Command {
     public EditAttendance(AttendanceList attendances) {
         this.attendanceList = attendances;
         this.ui = new UI();
+        this.displayTable = new DisplayTable();
     }
 
     /**
@@ -31,7 +34,9 @@ public class EditAttendance extends Command {
      * To display the selected attendance.
      */
     private void displayAttendance() {
-        UI.display(attendanceList.getAttendanceList().get(index).toString());
+        displayTable.printHeaderOfThree("index", "Name of Student", "Status");
+        displayTable.printBodyOfThree(1, attendanceList.getAttendanceList().get(index).getStudentName(),
+                attendanceList.getAttendanceList().get(index).getStatus());
     }
 
     /**
@@ -41,7 +46,12 @@ public class EditAttendance extends Command {
         UI.display("What do you want to change the name to?");
         ui.readUserInput();
         String studentName = ui.getUserInput();
-        attendanceList.getAttendanceList().get(index).setName(studentName);
+        if (attendanceList.isDuplicate(studentName)) {
+            UI.display("Duplicate name found. Please try again.");
+            editName();
+        } else {
+            attendanceList.getAttendanceList().get(index).setName(studentName);
+        }
     }
 
     /**
