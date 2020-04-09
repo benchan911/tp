@@ -13,6 +13,13 @@ import seedu.event.EventList;
 import seedu.exception.PacException;
 import seedu.ui.UI;
 
+import java.io.IOException;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.FileHandler;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 /**
  * To interpret the attendance command.
  */
@@ -21,11 +28,30 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
     protected AttendanceList attendances;
     protected String eventName;
     protected UI ui;
+    private static final Logger logger = Logger.getLogger(AttendanceCommandInterpreter.class.getName());
 
     public AttendanceCommandInterpreter(EventList eventList) {
         super(eventList);
         this.ui = new UI();
     }
+
+    public static void setupLogger() throws PacException {
+        LogManager.getLogManager().reset();
+        logger.setLevel(Level.ALL);
+
+        ConsoleHandler ch = new ConsoleHandler();
+        ch.setLevel(Level.SEVERE);
+        logger.addHandler(ch);
+
+        try {
+            FileHandler fh = new FileHandler("AttendanceCommandInterpreter.log");
+            fh.setLevel(Level.FINE);
+            logger.addHandler(fh);
+        } catch (IOException e) {
+            throw new PacException(e.getMessage());
+        }
+    }
+
 
     /**
      * Execute the command from userInput.
@@ -38,6 +64,11 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
         String commandType = getFirstWord(commandDescription);
         eventName = ui.getEventNameForAttendance();
         attendances = getAttendance(eventName);
+
+        assert commandType.isBlank() : "Attendance: Unknown command";
+
+        AttendanceCommandInterpreter.setupLogger();
+        logger.info("My First Log");
 
         switch (commandType.toLowerCase().trim()) {
         case "add":

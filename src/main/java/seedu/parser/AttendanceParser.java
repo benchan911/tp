@@ -42,4 +42,11 @@ public class AttendanceParser {
         }
         return new Attendance(studentName, status);
     }
+
+    public String getName(String commandParameters) {
+        String[] dataToRead = commandParameters.split(" ", 5);
+        String[] tokens = dataToRead[0].split("/");
+        String studentName = tokens[1];
+        return studentName;
+    }
 }
