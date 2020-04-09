@@ -20,7 +20,6 @@ public class Attendance {
         setStatus(isPresent);
     }
 
-
     /**
      * Set the name of the student base on the input.
      * @param input input provided by the user.
