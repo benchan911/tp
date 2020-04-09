@@ -105,4 +105,19 @@ public class AttendanceList {
     }
 
 
+    public void findAttendance(String keyword) {
+        int index = 1;
+        ArrayList<Attendance> searchResults = new ArrayList<>();
+        for (Attendance attendance: attendanceList) {
+            if (attendance.getStudentName().toLowerCase().contains(keyword)) {
+                searchResults.add(attendance);
+            }
+        }
+        UI.display("Search Results");
+        displayTable.printHeaderOfThree("Index", "Name of Student", "Status");
+        for (Attendance attendance: searchResults) {
+            displayTable.printBodyOfThree(index, attendance.getStudentName(), attendance.getStatus());
+            index++;
+        }
+    }
 }

@@ -5,26 +5,22 @@ import seedu.command.Command;
 import seedu.exception.PacException;
 import seedu.ui.UI;
 
-/**
- * Class representing an attendance related command to List an attendanceList of a specific event.
- */
-public class ViewAttendanceList extends Command {
+public class FindAttendance extends Command {
 
     protected AttendanceList attendanceList;
     protected UI ui;
 
-    public ViewAttendanceList(AttendanceList attendances) {
+    public FindAttendance(AttendanceList attendances) {
         this.attendanceList = attendances;
         this.ui = new UI();
     }
 
-    /**
-     * To view the existing attendanceList.
-     * If the attendanceList is empty, it will display a message to inform that the attendanceList is empty.
-     */
-    private void view() {
+    private void find() {
         if (!attendanceList.isEmpty()) {
-            attendanceList.displayAttendanceList();
+            UI.display("Please type the name of the student you are looking for.");
+            ui.readUserInput();
+            String keyword = ui.getUserInput().trim().toLowerCase();
+            attendanceList.findAttendance(keyword);
         } else {
             UI.display("Attendance List is empty");
         }
@@ -32,6 +28,7 @@ public class ViewAttendanceList extends Command {
 
     @Override
     public void execute() throws PacException {
-        view();
+        find();
     }
 }
+

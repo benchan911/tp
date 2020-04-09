@@ -7,6 +7,7 @@ import seedu.command.attendance.ClearAttendanceList;
 import seedu.command.attendance.SortAttendanceListByName;
 import seedu.command.attendance.ViewAttendanceList;
 import seedu.command.attendance.SortAttendanceListByStatus;
+import seedu.command.attendance.FindAttendance;
 import seedu.event.EventList;
 import seedu.exception.PacException;
 import seedu.ui.UI;
@@ -46,6 +47,8 @@ public class AttendanceCommandInterpreter extends CommandInterpreter {
             return new ClearAttendanceList(attendances, eventName);
         case "sort":
             return sortCommand();
+        case "find":
+            return new FindAttendance(attendances);
         default:
             throw new PacException("Attendance: Unknown command.");
         }
