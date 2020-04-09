@@ -26,7 +26,7 @@ public class Attendance {
      * @param input input provided by the user.
      */
     public void setName(String input) {
-        this.studentName = input;
+        this.studentName = input.trim();
     }
 
     /**
