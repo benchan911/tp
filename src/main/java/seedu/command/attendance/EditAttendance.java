@@ -38,7 +38,7 @@ public class EditAttendance extends Command {
             UI.display("What do you want to change the status to?");
             ui.readUserInput();
             input = ui.getUserInput();
-            attendanceList.getAttendanceList().get(index).setNewStatus(input);
+            attendanceList.getAttendanceList().get(index).setStatus(input);
         }
         attendanceList.displayAttendanceList();
     }

@@ -62,16 +62,20 @@ public class AttendanceList {
         attendanceList.add(attendance);
     }
 
-    /**
-     * To display the attendanceList in table form.
-     */
-    public void displayAttendanceList() {
+    public void displayList(ArrayList<Attendance> attendanceList) {
         int index = 1;
         displayTable.printHeaderOfThree("index", "Name of Student", "Status");
         for (Attendance attendance : attendanceList) {
             displayTable.printBodyOfThree(index, attendance.getStudentName(), attendance.getStatus());
             index++;
         }
+    }
+
+    /**
+     * To display the attendanceList in table form.
+     */
+    public void displayAttendanceList() {
+        displayList(attendanceList);
     }
 
     /**
@@ -106,18 +110,17 @@ public class AttendanceList {
 
 
     public void findAttendance(String keyword) {
-        int index = 1;
+        displayList(isMatch(keyword));
+    }
+
+    private ArrayList<Attendance> isMatch(String keyword) {
+        UI.display("Search Results");
         ArrayList<Attendance> searchResults = new ArrayList<>();
         for (Attendance attendance: attendanceList) {
             if (attendance.getStudentName().toLowerCase().contains(keyword)) {
                 searchResults.add(attendance);
             }
         }
-        UI.display("Search Results");
-        displayTable.printHeaderOfThree("Index", "Name of Student", "Status");
-        for (Attendance attendance: searchResults) {
-            displayTable.printBodyOfThree(index, attendance.getStudentName(), attendance.getStatus());
-            index++;
-        }
+        return searchResults;
     }
 }
