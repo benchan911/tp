@@ -1,4 +1,4 @@
-package seedu.studentList;
+package seedu.studentlist;
 
 import org.junit.jupiter.api.Test;
 import seedu.student.StudentList;
@@ -35,7 +35,7 @@ public class StudentListTest {
         studentList.addToList("Alice");
         studentList.addToList("Charlie");
         studentList.addToList("Bobby");
-        assertEquals("[Alice, Charlie, Bobby]" , studentList.getStudentList().toString());
+        assertEquals("[Alice, Charlie, Bobby]", studentList.getStudentList().toString());
     }
 
     @Test
