@@ -19,7 +19,7 @@ public class ViewAttendanceList extends Command {
     }
 
     /**
-     * To view the existing attendanceList.
+     * Method To view the existing attendanceList.
      * If the attendanceList is empty, it will display a message to inform that the attendanceList is empty.
      */
     private void view() {

@@ -5,6 +5,10 @@ import seedu.command.Command;
 import seedu.exception.PacException;
 import seedu.ui.UI;
 
+/**
+ * Class representing an attendance related command to List an attendanceList of a specific event.
+ * Find the matches base on the keyword given by the user.
+ */
 public class FindAttendance extends Command {
 
     protected AttendanceList attendanceList;
@@ -15,12 +19,14 @@ public class FindAttendance extends Command {
         this.ui = new UI();
     }
 
+    /**
+     * Method To find matches.
+     * If the attendanceList is empty, it will display a message to inform that the attendanceList is empty
+     * and will not attempt to find.
+     */
     private void find() {
         if (!attendanceList.isEmpty()) {
-            UI.display("Please type the name of the student you are looking for.");
-            ui.readUserInput();
-            String keyword = ui.getUserInput().trim().toLowerCase();
-            attendanceList.findAttendance(keyword);
+            attendanceList.findAttendance();
         } else {
             UI.display("Attendance List is empty");
         }

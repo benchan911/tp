@@ -109,7 +109,10 @@ public class AttendanceList {
     }
 
 
-    public void findAttendance(String keyword) {
+    public void findAttendance() {
+        UI.display("Please type the name of the student you are looking for.");
+        ui.readUserInput();
+        String keyword = ui.getUserInput().trim().toLowerCase();
         displayList(isMatch(keyword));
     }
 
