@@ -140,7 +140,6 @@ Below shows the flow chart and sequence diagram of Attendance Command Interprete
 ![Sequence Diagram]()
 *Sequence diagram of Attendance Command Interpreter*
 
-
 #### 2.6.3 Performance Command Interpreter
 Performance Command Interpreter interprets the user input when it belongs to the
 performance category. 
@@ -217,6 +216,34 @@ Note that:
 * `attendance add` command requires a line-by-line insertion of the student attendance data. 
 The user is given an option to either use an existing list stored under StudentListCollection or
 create a new attendance list. `n/` and `p/` flags are used to insert new attendance.
+
+#### Features under Attendance
+There are 6 features for attendance in total, as shown below. 
+The features will be presented in the order of sequence diagram, followed by description.  
+
+1. Add attendanceList  
+![AddAttendanceList]()  
+*Sequence diagram of AddAttendanceList*
+
+1. Clear attendanceList  
+![AddAttendanceList]()  
+*Sequence diagram of ClearAttendanceList*
+
+1. View attendanceList  
+![AddAttendanceList]()  
+*Sequence diagram of ViewAttendanceList*
+
+1. Sort attendanceList  
+![AddAttendanceList]()  
+*Sequence diagram of SortAttendanceList*
+
+1. Edit attendance  
+![AddAttendanceList]()  
+*Sequence diagram of EditAttendance*
+
+1. Find attendance  
+![AddAttendanceList]()  
+*Sequence diagram of FindAttendance*  
 
 ### 3.3 Calendar
 *Figure 2: Class diagram of the Calendar component*
