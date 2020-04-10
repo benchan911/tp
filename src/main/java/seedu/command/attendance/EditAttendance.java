@@ -86,13 +86,16 @@ public class EditAttendance extends Command {
         UI.display("Do you wish to change the `name` or change the `status`");
         ui.readUserInput();
         String input = ui.getUserInput();
-        switch(input.toLowerCase().trim()) {
+        switch (input.toLowerCase().trim()) {
         case "name":
             editName();
+            break;
         case "status":
             editStatus();
+            break;
         default:
             UI.display("I do not understand your message. Please try again");
+            break;
         }
     }
 
