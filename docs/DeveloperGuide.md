@@ -129,6 +129,18 @@ returns Command for execution.
 
 #### 2.6.1 Event Command Interpreter
 #### 2.6.2 Attendance Command Interpreter
+Attendance Command Interpreter interprets the user input when it belongs to the attendance category.
+When user input is passed to Attendance Command Interpreter, it extracts the second word in the user
+input and decides whether the string can be interpreted as a valid Command. If valid, the interpreter
+returns its corresponding Command. Else, the interpreter will throw PacException to inform the user 
+that the string is interpreted as an invalid Command.
+Below shows the flow chart and sequence diagram of Attendance Command Interpreter.
+![Flow chart]()
+*Flow Chart of Attendance Command Interpreter*
+![Sequence Diagram]()
+*Sequence diagram of Attendance Command Interpreter*
+
+
 #### 2.6.3 Performance Command Interpreter
 Performance Command Interpreter interprets the user input when it belongs to the
 performance category. 
@@ -224,7 +236,7 @@ DeletePerformance...), and ask for relevant information (e.g. event name, studen
 1. Then, with the information extracted from the previous step passed into it. It modifies PerformanceList` under
 the event class correspond to the input event name.
 1. These commands are then returned to `Pac.run()` to `execute()`. 
-
+ 
 Note that:
 * All PerformanceList class are created under an Event. A PerformanceList cannot exist 
 by its own. 
@@ -388,16 +400,14 @@ folder in command terminal.
 `attendance clear`
 1. View generated table for attendance list by typing  
 `attendance view`  
-1. Sort attendance list by typing
+1. Sort attendance list by typing  
 `attendance sort`  
-1. Find attendance by typing
+1. Find attendance by typing  
 `attendance find`  
-1. Edit attendance by typing
+1. Edit attendance by typing  
 `attendance edit`  
  
 **Performance**
-1. Sort performance list by typing
-`performance sort`
 1. Add performance to performance list by typing  
 `performance add`
 1. Delete a performance from performance list by typing  
@@ -406,7 +416,7 @@ folder in command terminal.
 `performance view` 
 1. Edit performance list by typing  
 `performance edit`
-1. Sort performance list by typing
+1. Sort performance list by typing  
 `performance sort`  
 
 **Student name list**
@@ -418,7 +428,7 @@ folder in command terminal.
 `studentlist view` 
 1. Find a student name in student name list by typing  
 `studentlist find`
-1. Sort student list by typing
+1. Sort student list by typing  
 `studentlist sort`
 
 ## Glossary
