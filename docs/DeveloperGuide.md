@@ -157,6 +157,16 @@ Performance Command Interpreter.
 
 #### 2.6.4 Seminar Command Interpreter
 #### 2.6.5 Student Command Interpreter
+Student Command Interpreter interprets the user input when it belongs to the studentlist category.
+When user input is passed to Student Command Interpreter, it extracts the second word in the user
+input and decides whether the string can be interpreted as a valid Command. If valid, the interpreter
+returns its corresponding Command. Else, the interpreter will throw PacException to inform the user 
+that the string is interpreted as an invalid Command.
+Below shows the flow chart and sequence diagram of Student Command Interpreter.
+![Flow chart]()
+*Flow Chart of Student Command Interpreter*
+![Sequence Diagram]()
+*Sequence diagram of Student Command Interpreter*
 
 ## 3. Implementation  
 ### 3.1 Event
