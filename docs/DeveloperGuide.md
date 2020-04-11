@@ -220,27 +220,30 @@ and print Attendance data in a table format.
     
     1. ![SortAttendanceListByStatus](images/SortAttendanceListByStatus.png)    
     *Sequence diagram of SortAttendanceListByStatus*    
-SortAttendanceListByName and SortAttendanceListByStatus are subclasses of Command. 
+`SortAttendanceListByName` and `SortAttendanceListByStatus` are subclasses of Command. 
 They both allow the user to sort a attendance list by either the student's name or status.
 The two Commands will be discussed together in this section as they have similar behaviour.  
-The methods SortAttendanceListByName and SortAttendanceListByStatus access a desired attendanceList and check whether 
+The methods `SortAttendanceListByName` and `SortAttendanceListByStatus` access a desired `attendanceList` and check whether 
 the list is empty. 
 If empty, it calls display() in UI and inform the user list is empty.  
-Else, it will sort the attendanceList by the type mentioned in its method name.  
+Else, it will sort the `attendanceList` by the type mentioned in its method name.  
 
 1. Edit attendance  
 ![EditAttendance]()    
 *Sequence diagram of EditAttendance*  
-EditAttendance is a subclass of Command. It allows the user to edit an attendance,
-either the student's name or status, from a desired attendance list under an Event.  
-The method edit() accesses the desired attendanceList of given event, and checks whether the list is empty.
+`EditAttendance` is a subclass of Command. It allows the user to edit an `attendance`,
+either the student's name or status, from a desired `attendanceList` under an Event.  
+The method edit() accesses the desired `attendanceList` of given event, and checks whether the list is empty.
 If empty, it calls display() in UI and inform the user list is empty. Else, it will call decideEdit() from itself.
 The method decideEdit() 
 
 1. Find attendance  
-![FindAttendance]()  
+![FindAttendance](images/FindAttendanceList.png)  
 *Sequence diagram of FindAttendance*  
-FindAttendance is a subclass of Command. It allows the user to find an attendance,
+`FindAttendance` is a subclass of Command. It allows the user to find an `attendance`.
+The method find() accesses the desired `attendanceList` of given event, and checks whether the list is empty.
+If empty, it calls display() in UI and inform the user list is empty. Else, it will call findAttendance() from 
+`attendanceList`.
 
 ### 3.3 Calendar
 *Figure 2: Class diagram of the Calendar component*
