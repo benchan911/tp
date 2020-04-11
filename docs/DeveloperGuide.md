@@ -198,7 +198,7 @@ The features will be presented in the order of sequence diagram, followed by des
 *Sequence diagram of AddAttendanceList*   
  
 1. Clear attendanceList    
-![ClearAttendanceList]()    
+![ClearAttendanceList](images/ClearAttendanceList.png)    
 *Sequence diagram of ClearAttendanceList*
 ClearAttendanceList is a subclass of Command. It allows the user to clear an existing attendance list under an Event.  
 The method clear() accesses the desired attendanceList of a given event, and checks whether the list is empty.
@@ -206,7 +206,7 @@ If empty, it calls display() in UI and inform the user list is empty. Else, it w
 stored under the given event.
 
 1. View attendanceList  
-![ViewAttendanceList]()     
+![ViewAttendanceList](images/ViewAttendanceList.png)     
 *Sequence diagram of ViewAttendanceList*    
 ViewAttendanceList is a subclass of Command. It allows the user to view a self generated table based on the data 
 in a desired attendance list.  
@@ -215,17 +215,15 @@ If empty, it calls display() in UI and inform the user list is empty. Else, it w
 and print Attendance data in a table format.  
 
 1. Sort attendanceList  
-![SortAttendanceList]()  
-*Sequence diagram of SortAttendanceList*
-    1. ![SortAttendanceListByName]()   
+    1. ![SortAttendanceListByName](images/SortAttendanceListByName.png)   
     *Sequence diagram of SortAttendanceListByName*    
     
-    1. ![SortAttendanceListByList]()    
-    *Sequence diagram of SortAttendanceListByList*    
-SortAttendanceListByName and SortAttendanceListByList are subclasses of Command. 
+    1. ![SortAttendanceListByStatus](images/SortAttendanceListByStatus.png)    
+    *Sequence diagram of SortAttendanceListByStatus*    
+SortAttendanceListByName and SortAttendanceListByStatus are subclasses of Command. 
 They both allow the user to sort a attendance list by either the student's name or status.
 The two Commands will be discussed together in this section as they have similar behaviour.  
-The methods SortAttendanceListByName and SortAttendanceListByList access a desired attendanceList and check whether 
+The methods SortAttendanceListByName and SortAttendanceListByStatus access a desired attendanceList and check whether 
 the list is empty. 
 If empty, it calls display() in UI and inform the user list is empty.  
 Else, it will sort the attendanceList by the type mentioned in its method name.  
