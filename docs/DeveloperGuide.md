@@ -159,7 +159,7 @@ either by complete match, or fuzzy match.
 * Any classes (e.g. `Seminar`) that inherit from `Event` class will have similar program flow. 
 
 ### 3.2 Attendance
-![attendance]()        
+![attendance](images/Attendance.png)        
 *Class diagram of the Attendance component*    
 The Attendance features allow users to update and keep track of their students' attendance for a Event.
 
@@ -172,7 +172,7 @@ that the string is interpreted as an invalid Command.
 Below shows the flow chart and sequence diagram of Attendance Command Interpreter.  
 ![Flow chart](images/AttendanceCommandInterpreterFlowChart.png)  
 *Flow Chart of Attendance Command Interpreter*  
-![Sequence Diagram]()  
+![Sequence Diagram](images/AttendanceCommandInterpreterSequenceDiagram.png)  
 *Sequence diagram of Attendance Command Interpreter*  
 
 #### Program flow
@@ -321,7 +321,7 @@ of the Performance to be deleted, and return a Performance.
 The Performance attained from getPerformance() will be deleted from a desired performanceList. 
 
 1. Edit performanceList
-![EditPerformance](images/EditPerformance.png)
+![EditPerformance](images/EditPerformance.png)  
 *Sequence diagram of EditPerformance*  
 EditPerformanceList is a subclass of Command. It allows the user to edit a performance,
 either the student's name or result, from a desired performance list under an Event.  
