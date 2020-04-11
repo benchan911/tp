@@ -32,11 +32,7 @@ public class FindStudentList extends Command {
             UI.display("\nPlease state the list name you are searching for");
             ui.readUserInput();
             String name = ui.getUserInput();
-            for (int i = 0; i < studentListCollection.size(); i++) {
-                if (studentListCollection.get(i).getListName().toLowerCase().contains(name.toLowerCase())) {
-                    searchResults.add(studentListCollection.get(i));
-                }
-            }
+            searchResults = studentListCollection.search(name);
             if (searchResults.isEmpty()) {
                 UI.display("Nothing match you description : " + name);
             } else {

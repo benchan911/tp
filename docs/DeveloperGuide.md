@@ -442,7 +442,8 @@ displayStudentListCollectionEmpty() from UI, to inform the user.
 Else, it calls printStudentListCollection() from UI to print the table. 
 
 1. Find student list   
-![FindStudentList]()   
+![FindStudentList](images/FindStudentList.png)   
+ *Sequence diagram of FindStudentList*   
 `FindStudentList` is a subclass of Command. It allows the user to find a certain `studentList`
 in `studentListCollection`.
 The method execute() calls find() from the same class.
