@@ -5,6 +5,7 @@ Pac. The following groups are in particular the intended audience of the documen
 - PAC project managers
 - PAC developers
 - PAC software testers
+
 ## Table of Contents
 1. [Setting Up](#1-setting-up)  
     1.1 [Requirements](#11-requirements)  
@@ -134,10 +135,10 @@ When user input is passed to Attendance Command Interpreter, it extracts the sec
 input and decides whether the string can be interpreted as a valid Command. If valid, the interpreter
 returns its corresponding Command. Else, the interpreter will throw PacException to inform the user 
 that the string is interpreted as an invalid Command.
-Below shows the flow chart and sequence diagram of Attendance Command Interpreter.
-![Flow chart]()
-*Flow Chart of Attendance Command Interpreter*
-![Sequence Diagram]()
+Below shows the flow chart and sequence diagram of Attendance Command Interpreter.  
+![Flow chart]()  
+*Flow Chart of Attendance Command Interpreter*  
+![Sequence Diagram]()   
 *Sequence diagram of Attendance Command Interpreter*
 
 #### 2.6.3 Performance Command Interpreter
@@ -222,28 +223,55 @@ There are 6 features for attendance in total, as shown below.
 The features will be presented in the order of sequence diagram, followed by description.  
 
 1. Add attendanceList  
-![AddAttendanceList]()  
-*Sequence diagram of AddAttendanceList*
-
-1. Clear attendanceList  
-![AddAttendanceList]()  
+![AddAttendanceList]()    
+*Sequence diagram of AddAttendanceList*   
+ 
+1. Clear attendanceList    
+![ClearAttendanceList]()    
 *Sequence diagram of ClearAttendanceList*
+ClearAttendanceList is a subclass of Command. It allows the user to clear an existing attendance list under an Event.  
+The method clear() accesses the desired attendanceList of a given event, and checks whether the list is empty.
+If empty, it calls display() in UI and inform the user list is empty. Else, it will clear the existing attendance list 
+stored under the given event.
 
 1. View attendanceList  
-![AddAttendanceList]()  
-*Sequence diagram of ViewAttendanceList*
+![ViewAttendanceList]()     
+*Sequence diagram of ViewAttendanceList*    
+ViewAttendanceList is a subclass of Command. It allows the user to view a self generated table based on the data 
+in a desired attendance list.  
+The method view() accesses the desired attendanceList of given event, and checks whether the list is empty.  
+If empty, it calls display() in UI and inform the user list is empty. Else, it will iterate through the attendanceList 
+and print Attendance data in a table format.  
 
 1. Sort attendanceList  
-![AddAttendanceList]()  
+![SortAttendanceList]()  
 *Sequence diagram of SortAttendanceList*
+    1. ![SortAttendanceListByName]()   
+    *Sequence diagram of SortAttendanceListByName*    
+    
+    1. ![SortAttendanceListByList]()    
+    *Sequence diagram of SortAttendanceListByList*    
+SortAttendanceListByName and SortAttendanceListByList are subclasses of Command. 
+They both allow the user to sort a attendance list by either the student's name or status.
+The two Commands will be discussed together in this section as they have similar behaviour.  
+The methods SortAttendanceListByName and SortAttendanceListByList access a desired attendanceList and check whether 
+the list is empty. 
+If empty, it calls display() in UI and inform the user list is empty.  
+Else, it will sort the attendanceList by the type mentioned in its method name.  
 
 1. Edit attendance  
-![AddAttendanceList]()  
-*Sequence diagram of EditAttendance*
+![EditAttendance]()    
+*Sequence diagram of EditAttendance*  
+EditAttendance is a subclass of Command. It allows the user to edit an attendance,
+either the student's name or status, from a desired attendance list under an Event.  
+The method edit() accesses the desired attendanceList of given event, and checks whether the list is empty.
+If empty, it calls display() in UI and inform the user list is empty. Else, it will call decideEdit() from itself.
+The method decideEdit() 
 
 1. Find attendance  
-![AddAttendanceList]()  
+![FindAttendance]()  
 *Sequence diagram of FindAttendance*  
+FindAttendance is a subclass of Command. It allows the user to find an attendance,
 
 ### 3.3 Calendar
 *Figure 2: Class diagram of the Calendar component*
@@ -343,7 +371,7 @@ Else, it will iterate through the performanceList and print Performance
 data in a table format.  
 
 ### 3.5 Student List Collection
-![Student](images/Student.png "Class diagram of Student component")     
+![Student]()     
 *Class diagram of the Student component*  
 1. When a user enters an studentList-related command, the command is analysed by `StudentCommandInterpreter`. 
 1. Once determined, the relevant class that corresponds to the type of command is created.
