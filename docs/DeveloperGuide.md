@@ -195,23 +195,29 @@ The features will be presented in the order of sequence diagram, followed by des
 
 1. Add attendanceList  
 ![AddAttendanceList](images/AddAttendance.png)    
-*Sequence diagram of AddAttendanceList*   
+*Sequence diagram of AddAttendanceList* 
+`AddAttendanceList` is a subclass of Command. It allows the user to add a new existing `attendanceList` under an Event.
+The method addToList() accesses the `attendanceList` of a given event, and checks whether the list is empty. If there is
+an existing `attendanceList` in the given event, it calls display() in UI and inform the user that the list currently
+exist and needs to be cleared before adding a new attendanceList. Else, it will prompt the user to ask whether the 
+user intends to use an existing `studentList` found in `studentListCollection` or create a new list which will be added
+to `studentListCollection` upon creation with the name of the event as the list name. 
  
 1. Clear attendanceList    
 ![ClearAttendanceList](images/ClearAttendanceList.png)    
 *Sequence diagram of ClearAttendanceList*
-ClearAttendanceList is a subclass of Command. It allows the user to clear an existing attendance list under an Event.  
-The method clear() accesses the desired attendanceList of a given event, and checks whether the list is empty.
-If empty, it calls display() in UI and inform the user list is empty. Else, it will clear the existing attendance list 
+`ClearAttendanceList` is a subclass of Command. It allows the user to clear an existing `attendanceList` under an Event.  
+The method clear() accesses the desired `attendanceList` of a given event, and checks whether the list is empty.
+If empty, it calls display() in UI and inform the user list is empty. Else, it will clear the existing `attendanceList` 
 stored under the given event.
 
 1. View attendanceList  
 ![ViewAttendanceList](images/ViewAttendanceList.png)     
 *Sequence diagram of ViewAttendanceList*    
-ViewAttendanceList is a subclass of Command. It allows the user to view a self generated table based on the data 
-in a desired attendance list.  
-The method view() accesses the desired attendanceList of given event, and checks whether the list is empty.  
-If empty, it calls display() in UI and inform the user list is empty. Else, it will iterate through the attendanceList 
+`ViewAttendanceList` is a subclass of Command. It allows the user to view a self generated table based on the data 
+in a desired `attendanceList`.  
+The method view() accesses the desired `attendanceList` of given event, and checks whether the list is empty.  
+If empty, it calls display() in UI and inform the user list is empty. Else, it will iterate through the `attendanceList` 
 and print Attendance data in a table format.  
 
 1. Sort attendanceList  
@@ -223,9 +229,8 @@ and print Attendance data in a table format.
 `SortAttendanceListByName` and `SortAttendanceListByStatus` are subclasses of Command. 
 They both allow the user to sort a attendance list by either the student's name or status.
 The two Commands will be discussed together in this section as they have similar behaviour.  
-The methods `SortAttendanceListByName` and `SortAttendanceListByStatus` access a desired `attendanceList` and check whether 
-the list is empty. 
-If empty, it calls display() in UI and inform the user list is empty.  
+The methods `SortAttendanceListByName` and `SortAttendanceListByStatus` access a desired `attendanceList` and check 
+whether it is empty. If empty, it calls display() in UI and inform the user list is empty.  
 Else, it will sort the `attendanceList` by the type mentioned in its method name.  
 
 1. Edit attendance  
@@ -235,7 +240,8 @@ Else, it will sort the `attendanceList` by the type mentioned in its method name
 either the student's name or status, from a desired `attendanceList` under an Event.  
 The method edit() accesses the desired `attendanceList` of given event, and checks whether the list is empty.
 If empty, it calls display() in UI and inform the user list is empty. Else, it will call decideEdit() from itself.
-The method decideEdit() 
+The method decideEdit() will call getUserInput() in UI to get the user input and decide whether to call editName() or 
+editStatus() base on the user input.
 
 1. Find attendance  
 ![FindAttendance](images/FindAttendanceList.png)  
@@ -243,7 +249,7 @@ The method decideEdit()
 `FindAttendance` is a subclass of Command. It allows the user to find an `attendance`.
 The method find() accesses the desired `attendanceList` of given event, and checks whether the list is empty.
 If empty, it calls display() in UI and inform the user list is empty. Else, it will call findAttendance() from 
-`attendanceList`.
+`attendanceList`. findAttendance() will search for attendance with the same name entered and display for the user.
 
 ### 3.3 Calendar
 *Figure 2: Class diagram of the Calendar component*
@@ -459,7 +465,6 @@ Last, it will call printSearchResults from displayList to display the searchResu
 The user will get informed when a success sort has been performed. 
  
 1. Sort student list   
-*Sequence diagram of SortAttendanceList*
     1. ![SortStudentListByName](images/SortStudentListByName.png)   
     *Sequence diagram of SortStudentListByName*    
     
