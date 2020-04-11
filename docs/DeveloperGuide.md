@@ -229,7 +229,7 @@ If empty, it calls display() in UI and inform the user list is empty.
 Else, it will sort the `attendanceList` by the type mentioned in its method name.  
 
 1. Edit attendance  
-![EditAttendance]()    
+![EditAttendance](images/EditAttendance.png)    
 *Sequence diagram of EditAttendance*  
 `EditAttendance` is a subclass of Command. It allows the user to edit an `attendance`,
 either the student's name or status, from a desired `attendanceList` under an Event.  
