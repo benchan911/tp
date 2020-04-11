@@ -1,8 +1,26 @@
 package seedu.student;
 
+import seedu.pac.Pac;
+
 import java.util.ArrayList;
 
+import static seedu.pac.Pac.studentListCollection;
+import static seedu.student.StudentList.listNameComparator;
+
 public class StudentListCollection extends ArrayList<StudentList> {
+
+    public void sortByName() {
+        Pac.studentListCollection.sort(listNameComparator);
+    }
+
+    /**
+     * Iterate through the studentListCollection and sort.
+     */
+    public void sortByList() {
+        for (int i = 0; i < studentListCollection.size(); i++) {
+            studentListCollection.get(i).sortAscending();
+        }
+    }
 
     public boolean isExistedListName(String name) {
         for (int i = 0; i < this.size(); ++i) {

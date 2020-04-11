@@ -396,8 +396,8 @@ The features will be presented in the order of sequence diagram, followed by des
 1. Add student list
 ![AddStudentList](images/addStudentList.png)  
  *Sequence diagram of AddStudentList*   
-AddStudentList is a subclass of Command. It allows the user to add a student list
-to the studentListCollection.    
+`AddStudentList` is a subclass of Command. It allows the user to add a student list
+to the `studentListCollection`.    
 The method execute() calls addToList() from the same class, which then calls 
 getListName() from UI to get a user input for listName.  
 The list name of student list is restricted to one word only, hence the parameter listName 
@@ -406,38 +406,38 @@ StudentList, a new student list is created with list name listName.
 The method addToList() calls addStudent(studentList) from UI to get user input 
 for student names to be added. The names are added to studentList
 in addStudent(studentList).  
-After user has done input, studentList will be printed, and this new list is
-added to studentListCollection.
+After user has done input, `studentList` will be printed, and this new list is
+added to `studentListCollection`.
  
 1. Delete student list  
 ![DeleteStudentList](images/DeleteStudentList.png)  
  *Sequence diagram of DeleteStudentList*  
-DeleteStudentList is a subclass of Command. It allows the user to delete a student list
+`DeleteStudentList` is a subclass of Command. It allows the user to delete a student list
 from the studentListCollection.    
-If the studentListCollection is empty, execute() calls displayStudentListCollectionEmpty()
+If the `studentListCollection` is empty, execute() calls displayStudentListCollectionEmpty()
 form UI, to inform the user.  
 Else, it calls deleteFromExisting() from the same class and get user input for index, the
 list number to be deleted.  
-The (index-1)th list in studentListCollection is deleted.  
+The (index-1)th list in `studentListCollection` is deleted.  
 
 1. Clear student list  
 ![ClearStudentList](images/ClearStudentList.png)  
  *Sequence diagram of ClearStudentList*  
-ClearStudentList is a subclass of Command. It allows the user to clear the 
-studentListCollection.  
+`ClearStudentList` is a subclass of Command. It allows the user to clear the 
+`studentListCollection`.  
 The method execute() calls clear() from the same class. 
-If the studentListCollection is empty, clear() calls displayStudentListCollectionEmpty()
+If the `studentListCollection` is empty, clear() calls displayStudentListCollectionEmpty()
 from UI, to inform the user.  
-Else, it calls clear() from StudentListCollection to clear the collection. 
+Else, it calls clear() from `StudentListCollection` to clear the collection. 
 The user will get informed when a success clear has been performed. 
 
 1. View student list  
 ![ViewStudentList](images/ViewStudentList.png)  
  *Sequence diagram of ViewStudentList*   
-ViewStudentList is a subclass of Command. It allows the user to view a self 
-generated table based on the data in studentListCollection.  
+`ViewStudentList` is a subclass of Command. It allows the user to view a self 
+generated table based on the data in `studentListCollection`.  
 The method execute() calls displayStudentList() from the same class. 
-If the studentListCollection is empty, displayStudentList() calls 
+If the `studentListCollection` is empty, displayStudentList() calls 
 displayStudentListCollectionEmpty() from UI, to inform the user.  
 Else, it calls printStudentListCollection() from UI to print the table. 
 
@@ -455,12 +455,11 @@ Last, it will call printSearchResults from displayList to display the searchResu
 The user will get informed when a success sort has been performed. 
  
 1. Sort student list   
-![SortStudentList]()    
 *Sequence diagram of SortAttendanceList*
-    1. ![SortStudentListByName]()   
+    1. ![SortStudentListByName](images/SortStudentListByName.png)   
     *Sequence diagram of SortStudentListByName*    
     
-    1. ![SortStudentListByList]()    
+    1. ![SortStudentListByList](images/SortStudentListByList.png)    
     *Sequence diagram of SortStudentListByList*    
 `SortStudentListByName` and `SortStudentListByList` are subclasses of Command. 
 They both allow the user to sort a student list by either the student's name within a list or 
