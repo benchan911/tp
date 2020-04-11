@@ -194,7 +194,7 @@ There are 6 features for attendance in total, as shown below.
 The features will be presented in the order of sequence diagram, followed by description.  
 
 1. Add attendanceList  
-![AddAttendanceList]()    
+![AddAttendanceList](images/AddAttendance.png)    
 *Sequence diagram of AddAttendanceList*   
  
 1. Clear attendanceList    
