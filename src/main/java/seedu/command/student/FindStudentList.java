@@ -15,7 +15,6 @@ import static seedu.pac.Pac.studentListCollection;
  */
 public class FindStudentList extends Command {
 
-    private String name;
     protected ArrayList<StudentList> searchResults = new ArrayList<>();
     protected DisplayList displayList = new DisplayList();
     protected UI ui = new UI();
@@ -29,10 +28,10 @@ public class FindStudentList extends Command {
         if (studentListCollection.isEmpty()) {
             UI.displayStudentListCollectionEmpty();
         } else {
-            displayStudentList();
+            displayStudentListCollection();
             UI.display("\nPlease state the list name you are searching for");
             ui.readUserInput();
-            name = ui.getUserInput();
+            String name = ui.getUserInput();
             for (int i = 0; i < studentListCollection.size(); i++) {
                 if (studentListCollection.get(i).getListName().toLowerCase().contains(name.toLowerCase())) {
                     searchResults.add(studentListCollection.get(i));
@@ -51,8 +50,8 @@ public class FindStudentList extends Command {
     /**
      * Displays studentListCollection.
      */
-    private void displayStudentList() {
-        ui.display("Displaying all student list: ");
+    private void displayStudentListCollection() {
+        UI.display("Displaying all student list: ");
         ui.printStudentListCollection();
     }
 
