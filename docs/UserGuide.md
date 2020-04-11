@@ -983,7 +983,7 @@ Command: `attendance find`
 
 Example:
 
-The following shows a successful find
+The following shows a successful find.
 
     >>> attendance view
     Please key in the name of event.
@@ -1023,7 +1023,7 @@ The following occurs when there is no names matching the name that the user inpu
     
     >>> Richard
     Search Results
-    There is no student named: Richard.
+    There is no student named: Richard
     
 The following occurs when the attendance list is empty.
 
