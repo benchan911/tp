@@ -372,7 +372,7 @@ when updating students' attendance and performance data conveniently.
 #### Program Flow   
 1. When a user enters an studentList-related command, the command is analysed by `StudentCommandInterpreter`. 
 1. Once determined, the relevant class that corresponds to the type of command is created.
-1. Then, the class will execute base on its function. It modifies `AttendanceList`.
+1. Then, the class will execute base on its function. It modifies `StudentList`.
 1. These commands are then returned to `Pac.run()` to `execute()`. 
 
 Note that:
