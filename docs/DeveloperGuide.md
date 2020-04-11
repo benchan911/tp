@@ -170,7 +170,7 @@ input and decides whether the string can be interpreted as a valid Command. If v
 returns its corresponding Command. Else, the interpreter will throw PacException to inform the user 
 that the string is interpreted as an invalid Command.
 Below shows the flow chart and sequence diagram of Attendance Command Interpreter.  
-![Flow chart]()  
+![Flow chart](images/AttendanceCommandInterpreterFlowChart.png)  
 *Flow Chart of Attendance Command Interpreter*  
 ![Sequence Diagram]()  
 *Sequence diagram of Attendance Command Interpreter*  
@@ -363,13 +363,13 @@ Else, it will iterate through the performanceList and print Performance
 data in a table format.  
 
 ### 3.5 Student List Collection
+![StudentListCollection](images/StudentList.png)     
+*Class diagram of the Student component* 
 
 The Student list features allow users to store a list of student names, which could be used
 when updating students' attendance and performance data conveniently.  
 
-![Student]()     
-
-*Class diagram of the Student component*  
+#### Program Flow   
 1. When a user enters an studentList-related command, the command is analysed by `StudentCommandInterpreter`. 
 1. Once determined, the relevant class that corresponds to the type of command is created.
 1. Then, the class will execute base on its function. It modifies `AttendanceList`.
@@ -385,9 +385,9 @@ When user input is passed to Student Command Interpreter, it extracts the second
 and decides whether that string can be interpreted to a valid Command. If valid, the interpreter returns 
 its corresponding Command.  If invalid, the interpreter throws PacException to inform the user. 
 Below shows the flow chart and sequence diagram of Student Command Interpreter.    
-![Flow chart]()    
+![Flow chart](images/StudentCommandInterpreterFlowChart.png)    
 *Flow Chart of Student Command Interpreter*    
-![Sequence diagram]() 
+![Sequence diagram]()   
 *Sequence diagram of Student Command Interpreter*    
 
 #### Features under Student List Collection
