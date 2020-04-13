@@ -76,7 +76,7 @@ or above installed in your Computer.
 1.  Download the latest Pac-2.1.jar from [here](https://github.com/AY1920S2-CS2113T-T12-4/tp/releases).
 1.  Copy the file to the folder you want to use as the home folder for this application.
 
-### 2.2 Startup using Command Line
+### 2.2. Startup using Command Line
 1.  Open your terminal.
 1.  Navigate to the home folder containing Pac.
 1.  cd followed by the file path into the terminal as shown below:  
@@ -178,7 +178,7 @@ created and if you wish to create the student list, you will need to retype the 
     Student List Add Command Failed.
 
     
-#### 4.1.2 View all existing student lists from the student list collection
+#### 4.1.2. View all existing student lists from the student list collection
 View all existing students lists from student list collection. Using this feature, you will be able to generate 
 the entire student list collection. You will be able to make the future decision on whether to import an existing 
 student list during the creation of new attendance list and/or performance list. 
@@ -225,7 +225,7 @@ The following occurs when there are no existing student list in the student list
     >>> studentlist view
     There is no existing student list.              
                 
-#### 4.1.3 Clear all existing student lists from the student list collections
+#### 4.1.3. Clear all existing student lists from the student list collections
 Clear all existing student lists from the student list collection. This is a clear all command. If you wish to delete 
 a specific student list, please use the `studentlist delete` instead.
 
@@ -245,7 +245,7 @@ The following occurs when there are no existing student list in the student list
     >>> studentlist clear
     There is no existing student list.
         
-#### 4.1.4 Clear all existing student lists from the student list collection
+#### 4.1.4. Clear all existing student lists from the student list collection
 Delete a specific student list from the student list collection base on its index. If you wish to delete all student 
 lists in the student list collection, please use `studentlist clear` instead.
 
@@ -288,7 +288,7 @@ The following occurs when there are no existing student list in the student list
     >>> studentlist delete
     There is no existing student list.               
     
-#### 4.1.5 Find existing student list(s) from the student list collection
+#### 4.1.5. Find existing student list(s) from the student list collection
 Find existing student list(s) from student list collection base on keyword.
 
 In future releases, you will be able to customize your search to decide if you want to search for a particular student
@@ -390,7 +390,7 @@ The following occurs when there are no existing student list in the student list
     >>> studentlist find
     There is no existing student list.        
 
-#### 4.1.6 Sort all existing student lists from the student list collection by their list name
+#### 4.1.6. Sort all existing student lists from the student list collection by their list name
 Sort all existing student lists from the student list collection by their list name. Regardless whether the 
 lists are in order, this command will force all existing lists to be sorted by their list name.
 
@@ -467,7 +467,7 @@ The following occurs when there is at least one existing student list in the stu
     |___________|____________________________________________________________________________________|
        
 
-#### 4.1.7 Sort all names within the existing student lists from the student list collection
+#### 4.1.7. Sort all names within the existing student lists from the student list collection
 Sort all names within the existing student lists. Regardless whether the names within the list are in order, 
 this command will force all existing lists sort the names within the list.
 
@@ -674,7 +674,7 @@ Expected outcome:
 
 
 ### 4.3. Calendar @Haritha
-#### 4.3.1 View events under a particular time
+#### 4.3.1. View events under a particular time
 View events under a particular semester and academic year in a calendar format. In the calendar view, it shows the date of the event, type 
 of the event in brackets, and name of the event. 
 
@@ -729,7 +729,7 @@ Example:
 This section for attendance related commands is done in chronological order. Please follow the numbering to get
 a clearer understanding on how you can use the commands. 
 
-#### 4.4.1 Add students’ attendance to event
+#### 4.4.1. Add students’ attendance to event
 
 Add a student’s attendance to the attendance list.  
 This is a step by step command and you may follow the instructions given by the console. 
@@ -856,7 +856,7 @@ In the future releases, we will allow names like "John Doe" to be added.
     >>> done
     You have successfully added 3 to the attendance list.
     
-#### 4.4.2 View attendance list
+#### 4.4.2. View attendance list
 
 View the attendance list under a certain event. Using this feautre, you will be able to generate a table 
 to show attendance list.
@@ -890,7 +890,7 @@ The following occurs if there is no existing attendance list under event `CS1010
         >>> CS2113T Tutorial
         Attendance List is empty
     
-#### 4.4.3 Clear attendance list
+#### 4.4.3. Clear attendance list
 
 Clear the attendance list under a certain event.  Attendance list is cleared regardless whether 
 the attendance list under the event is empty. You will only be allowed to clear the entire attendance list.
@@ -938,7 +938,7 @@ The following will show the message shown when clearing of an empty attendance l
     >>> CS1010 Tutorial
     Attendance List is already empty
             
-#### 4.4.4 Sort attendance list by name
+#### 4.4.4. Sort attendance list by name
 
 Sort the attendance list by name in alphabetical order under a certain event. You will be able to quickly organize
 the names in the attendance list so that you can easily find a student if you want to look through the list manually.
@@ -1000,7 +1000,7 @@ The following occurs if there is no existing attendance list found under event `
         >>> name
         An empty list cannot be sorted   
       
-#### 4.4.5 Sort attendance list by status
+#### 4.4.5. Sort attendance list by status
 Sort the attendance list by attendance status under a certain event with student that are absent on the top.
 Using this feature, you can quickly find out the students who are absent under a specific event.   
 
@@ -1061,7 +1061,7 @@ The following occurs if there is no existing attendance list found under event `
       >>> status
       An empty list cannot be sorted      
 
-#### 4.4.6 Find attendance
+#### 4.4.6. Find attendance
 Find a student's attendance under a certain event. Using this feature, you will be able to quickly find the attendance
 of a specific student under an event. This feature will search through the attendance list to provide you with the 
 possible matches.
@@ -1120,7 +1120,7 @@ The following occurs when the attendance list is empty.
     >>> CS1010 Tutorial
     The attendance list is currently empty. Please add attendance instead.
 
-#### 4.4.7 Edit attendance
+#### 4.4.7. Edit attendance
 Edit a student's attendance under a certain event. Using this feature, you will be able to edit an existing student's
 attendance under a certain event.
 
