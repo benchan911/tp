@@ -105,7 +105,7 @@ Refer to [“Features”](#4-features) for details of each command.
 ### 4.1. Student List @Benjamin
 This section for student related commands is done in chronological order. Please follow the numbering to get
 a clearer understanding on how you can use the commands. Do note that the student list created are stored under
-a student list collection. Student list collection is a collection of student list created by the user.
+a student list collection. Student list collection is a collection of student list created.
 
 #### 4.1.1. Add New Student List
 
