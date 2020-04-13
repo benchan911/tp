@@ -113,9 +113,9 @@ Creates a student list and adds it to the student list collection, that can be u
 performance. 
 
 Please note the following points when you are using this feature:
-1. Users are NOT allowed to add in duplicated student names
+1. You will not be allowed to add in duplicated student names
     * For example, you will not be able to add in `John` as a student name if you added `John` previously into the list
-1. Users are NOT allowed to add in duplicated student list names
+1. You will not be allowed to add in duplicated student list names
     * For example, you will not be able to add in `cs2101` as a student list name if there is an existing `cs2101` student
     list stored in the student list collection
 1. student names and student list names are CASE-INSENSITIVE
@@ -129,7 +129,7 @@ Command:
     
 Examples: 
 
-The following shows a successful case of adding a new student list.
+The following shows a successful case of adding a new student list `CS2113T Tut`.
 
     >>> studentlist add
     What is the name of your list?
@@ -179,7 +179,9 @@ created and if you wish to create the student list, you will need to retype the 
 
     
 #### 4.1.2 View all existing student lists from the student list collection
-View all existing students lists from student list collection.
+View all existing students lists from student list collection. Using this feature, you will be able to generate 
+the entire student list collection. You will be able to make the future decision on whether to import an existing 
+student list during the creation of new attendance list and/or performance list. 
     
 Command: 
     
@@ -288,6 +290,9 @@ The following occurs when there are no existing student list in the student list
     
 #### 4.1.5 Find existing student list(s) from the student list collection
 Find existing student list(s) from student list collection base on keyword.
+
+In future releases, you will be able to customize your search to decide if you want to search for a particular student
+or a student list.
     
 Command: 
     
@@ -386,8 +391,8 @@ The following occurs when there are no existing student list in the student list
     There is no existing student list.        
 
 #### 4.1.6 Sort all existing student lists from the student list collection by their list name
-Sort all existing student lists from the student list collection by their list name. Regardless whether the lists are 
-in order, this command will force all existing lists to be sorted by their list name.
+Sort all existing student lists from the student list collection by their list name. Regardless whether the 
+lists are in order, this command will force all existing lists to be sorted by their list name.
 
 Command: 
     
@@ -668,7 +673,7 @@ Expected outcome:
     Datetime is not set. If you wish to add datetime, please enter the correct format:yyyy-MM-dd HHmm
 
 
-### 4.3 Calendar @Haritha
+### 4.3. Calendar @Haritha
 #### 4.3.1 View events under a particular time
 View events under a particular semester and academic year in a calendar format. In the calendar view, it shows the date of the event, type 
 of the event in brackets, and name of the event. 
@@ -720,9 +725,9 @@ Example:
      
 
 
-### 4.4 Attendance @Benjamin
+### 4.4. Attendance @Benjamin
 This section for attendance related commands is done in chronological order. Please follow the numbering to get
-a clearer understanding on how you can use the commands.
+a clearer understanding on how you can use the commands. 
 
 #### 4.4.1 Add students’ attendance to event
 
@@ -732,11 +737,15 @@ You may wish to use an existing list found in student list collection.
 
 Please note that if there are existing students in the attendance list of the chosen event, it will add to the existing
 students list. If you wish to start a new attendance list of the chosen event, please use `attendance clear` to clear 
-the attendance list first.
+the attendance list first. 
+
+In future releases, we will allow adding of students to existing attendance list.
 
 Command:  `attendance add`
     
 Example:
+
+The following will show success examples creating a new attendance list under event `CS1010 Tutorial`. 
 
     >>> attendance add
     Please key in the name of event.
@@ -748,7 +757,7 @@ the alternative provided by Pac: record using an existing name list located unde
 Do note that you need to have an existing name list before you are using this shortcut.
 If you choose to create a new attendance list, the new list will be added to the student list collection.
   
-The following will show a success example of *using an existing name list to add attendance*. 
+The following will show a success example of *using an existing name list to add attendance* . 
 
     Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
     
@@ -812,7 +821,9 @@ The following will show a success example of *creating a new attendance list usi
     
 The following will show a success example of *creating a new attendance list using a single line interface*.
 Please note that the name provided must be connected. "John Doe" is not accepted. If you wish to add in name
-with spaces, please use the other method. Future releases will allow names like "John Doe" to be added. 
+with blank spaces, please use the other method. 
+
+In the future releases, we will allow names like "John Doe" to be added. 
 
     Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
     
@@ -847,13 +858,14 @@ with spaces, please use the other method. Future releases will allow names like 
     
 #### 4.4.2 View attendance list
 
-View the attendance list under a certain event.  
+View the attendance list under a certain event. Using this feautre, you will be able to generate a table 
+to show attendance list.
 
 Command:  `attendance view`
 
 Example:
 
-The following occurs if there is an existing attendance list.
+The following occurs if there is an existing attendance list stored under event `CS1010 Tutorial`.
 
         >>> attendance view
         Please key in the name of event.
@@ -870,7 +882,7 @@ The following occurs if there is an existing attendance list.
         |___________|____________________________________________________|______________________________|
                
         
-The following occurs if there is no existing attendance list.
+The following occurs if there is no existing attendance list under event `CS1010 Tutorial`.
 
         >>> attendance view
         Please key in the name of event.
@@ -881,13 +893,16 @@ The following occurs if there is no existing attendance list.
 #### 4.4.3 Clear attendance list
 
 Clear the attendance list under a certain event.  Attendance list is cleared regardless whether 
-the attendance list under the event is empty.
+the attendance list under the event is empty. You will only be allowed to clear the entire attendance list.
+
+In future releases, we will offer `attendance delete` to specifically delete a particular attendance in the attendance
+list. 
 
 Command:  `attendance clear`
 
 Example:
 
-The following will show a successful clearing of an existing attendance list.
+The following will show a successful clearing of the existing attendance list stored under event `CS1010 Tutorial`.
 
     >>> attendance view
     Please key in the name of event.
@@ -925,13 +940,14 @@ The following will show the message shown when clearing of an empty attendance l
             
 #### 4.4.4 Sort attendance list by name
 
-Sort the attendance list by name in alphabetical order under a certain event.  
+Sort the attendance list by name in alphabetical order under a certain event. You will be able to quickly organize
+the names in the attendance list so that you can easily find a student if you want to look through the list manually.
 
 Command:  `attendance sort`
     
 Example:
 
-The following shows the existing attendance list under the event CS1010 Tutorial.
+The following shows the existing attendance list under the event `CS1010 Tutorial`.
 
     >>> attendance view
     Please key in the name of event.
@@ -948,7 +964,7 @@ The following shows the existing attendance list under the event CS1010 Tutorial
     |___________|____________________________________________________|______________________________|
 
 
-The following shows a successful sort the attendance list by name.
+The following shows a successful sort the attendance list under event `CS1010 Tutorial` by name.
 
       >>> attendance sort
       Please key in the name of event.
@@ -973,7 +989,7 @@ The following shows a successful sort the attendance list by name.
       | 3         |  Sam Roe                                           |  Absent                      |
       |___________|____________________________________________________|______________________________|
       
-The following occurs if there is no existing attendance list.
+The following occurs if there is no existing attendance list found under event `CS1010 Tutorial`.
               
         >>> attendance sort         
         Please key in the name of event.
@@ -985,13 +1001,14 @@ The following occurs if there is no existing attendance list.
         An empty list cannot be sorted   
       
 #### 4.4.5 Sort attendance list by status
-Sort the attendance list by attendance status under a certain event with student that are absent on the top.  
+Sort the attendance list by attendance status under a certain event with student that are absent on the top.
+Using this feature, you can quickly find out the students who are absent under a specific event.   
 
 Command:  `attendance sort`
     
 Example:
 
-The following shows the existing attendance list under the event CS1010 Tutorial.
+The following shows the existing attendance list under the event `CS1010 Tutorial`.
 
     >>> attendance view
     Please key in the name of event.
@@ -1007,7 +1024,7 @@ The following shows the existing attendance list under the event CS1010 Tutorial
     | 3         |  David Chang                                       |  Absent                      |
     |___________|____________________________________________________|______________________________|
 
-The following shows a successful sort the attendance list by status.
+The following shows a successful sort the attendance list under event `CS1010 Tutorial` by status.
 
     >>> attendance sort
     Please key in the name of event.
@@ -1033,7 +1050,7 @@ The following shows a successful sort the attendance list by status.
     |___________|____________________________________________________|______________________________|
        
 
-The following occurs if there is no existing attendance list.
+The following occurs if there is no existing attendance list found under event `CS1010 Tutorial`.
 
       >>> attendance sort
       Please key in the name of event.
@@ -1045,13 +1062,15 @@ The following occurs if there is no existing attendance list.
       An empty list cannot be sorted      
 
 #### 4.4.6 Find attendance
-Find a student's attendance under a certain event.
+Find a student's attendance under a certain event. Using this feature, you will be able to quickly find the attendance
+of a specific student under an event. This feature will search through the attendance list to provide you with the 
+possible matches.
 
 Command: `attendance find`
 
 Example:
 
-The following shows a successful find.
+The following shows a successful find for student `Mary` under the event `CS1010 Tutorial`.
 
     >>> attendance view
     Please key in the name of event.
@@ -1102,8 +1121,8 @@ The following occurs when the attendance list is empty.
     The attendance list is currently empty. Please add attendance instead.
 
 #### 4.4.7 Edit attendance
-Edit a student's attendance under a certain event. 
-This allows the user to overwrite the student's name or status.
+Edit a student's attendance under a certain event. Using this feature, you will be able to edit an existing student's
+attendance under a certain event.
 
 Command: `attendance edit`
 
