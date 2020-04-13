@@ -460,13 +460,11 @@ The following occurs when there is at least one existing student list in the stu
     |___________|____________________________________________________________________________________|
     | 2         |  Jodi                                                                              |
     |___________|____________________________________________________________________________________|
-    
-    
-
+       
 
 #### 4.1.7 Sort all names within the existing student lists from the student list collection
 Sort all names within the existing student lists. Regardless whether the names within the list are in order, 
-this command will force all existing lists to be sorted by their list name within the student list collection.
+this command will force all existing lists sort the names within the list.
 
 Command: 
     
