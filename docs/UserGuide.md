@@ -22,7 +22,7 @@
 4.1.5. [Find Student List](#415-find-existing-student-lists-from-the-student-list-collection)  
 4.1.6. [Sort Student List by Name](#416-sort-existing-student-lists-in-the-student-list-collection-by-their-list-name)  
 4.1.7. [Sort Student List by List](#417-sort-student-name-found-in-student-lists)  
-4.2. [Event](#42-event-jiayee)
+4.2. [Event](#42-event-jiayee)    
 4.2.1. [Add New Event](#421-add-new-event)  
 4.2.2. [View Event List](#422-list-events)  
 4.2.3. [Delete Existing Event](#423-delete-event)      
@@ -105,7 +105,9 @@ Refer to [“Features”](#4-features) for details of each command.
 ### 4.1. Student List @Benjamin
 This section for student list related commands is done in chronological order. Please follow the numbering to get
 a clearer understanding on how you can use the commands. Do note that the student list created are stored under
-a student list collection. Student list collection is a collection of all student list created by PAC.
+a student list collection. 
+
+***Student list collection** is a collection of all student lists created by PAC.*
 
 #### 4.1.1. Add New Student List
 
@@ -478,7 +480,7 @@ The following occurs when there is at least one existing student list in the stu
     
 #### 4.1.7 Sort student name found in student lists
 Sorts student name found in all existing student lists in the student list collection. Regardless whether the lists are 
-in order, this command will force all existing lists to sort their students by their name.
+in order, this command will force all existing lists to sort their students by their name alphabetically. Please note that at this current release, we will only be able to sort names that do not contain numbers. 
 
 
 Command: 
@@ -741,12 +743,11 @@ a clearer understanding on how you can use the commands.
 
 #### 4.4.1. Add students’ attendance to event
 
-Add a student’s attendance to the attendance list.  
+Adds a student’s attendance to the attendance list.  
 This is a step by step command and you may follow the instructions given by the console. 
 You may wish to use an existing list found in student list collection.
 
-Please note that if there are existing students in the attendance list of the chosen event, it will add to the existing
-students list. If you wish to start a new attendance list of the chosen event, please use `attendance clear` to clear 
+If you wish to start a new attendance list of the chosen event, please use `attendance clear` to clear 
 the attendance list first. 
 
 In future releases, we will allow adding of students to existing attendance list.
@@ -755,7 +756,7 @@ Command:  `attendance add`
     
 Example:
 
-The following will show success examples creating a new attendance list under event `CS1010 Tutorial`. 
+The following will show successful examples creating a new attendance list under event `CS1010 Tutorial`. 
 
     >>> attendance add
     Please key in the name of event.
@@ -767,7 +768,7 @@ the alternative provided by Pac: record using an existing name list located unde
 Do note that you need to have an existing name list before you are using this shortcut.
 If you choose to create a new attendance list, the new list will be added to the student list collection.
   
-The following will show a success example of *using an existing name list to add attendance* . 
+The following will show a successful example of *using an existing name list to add attendance* . 
 
     Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
     
@@ -792,7 +793,7 @@ The following will show a success example of *using an existing name list to add
     Attendance of Sam Roe (Present) has been taken successfully under event CS1010 Tutorial.
     AttendanceList added
 
-The following will show a success example of *creating a new attendance list using a multi-line interface*.
+The following will show a successful example of *creating a new attendance list using a multi-line interface*.
 
     Would you like to import an existing student list? If yes, input 'yes'. Else, input anything.
     
@@ -868,7 +869,7 @@ In the future releases, we will allow names like "John Doe" to be added.
     
 #### 4.4.2. View attendance list
 
-View the attendance list under a certain event. Using this feautre, you will be able to generate a table 
+Views the attendance list under a certain event. Using this feautre, you will be able to generate a table 
 to show attendance list.
 
 Command:  `attendance view`
@@ -902,7 +903,7 @@ The following occurs if there is no existing attendance list under event `CS1010
     
 #### 4.4.3. Clear attendance list
 
-Clear the attendance list under a certain event.  Attendance list is cleared regardless whether 
+Clears the attendance list under a certain event.  Attendance list is cleared regardless whether 
 the attendance list under the event is empty. You will only be allowed to clear the entire attendance list.
 
 In future releases, we will offer `attendance delete` to specifically delete a particular attendance in the attendance
@@ -950,7 +951,7 @@ The following will show the message shown when clearing of an empty attendance l
             
 #### 4.4.4. Sort attendance list by name
 
-Sort the attendance list by name in alphabetical order under a certain event. You will be able to quickly organize
+Sorts the attendance list by name in alphabetical order under a certain event. You will be able to quickly organize
 the names in the attendance list so that you can easily find a student if you want to look through the list manually.
 
 Command:  `attendance sort`
@@ -1011,7 +1012,8 @@ The following occurs if there is no existing attendance list found under event `
         An empty list cannot be sorted   
       
 #### 4.4.5. Sort attendance list by status
-Sort the attendance list by attendance status under a certain event with student that are absent on the top.
+
+Sorts the attendance list by attendance status under a certain event with student that are absent on the top.
 Using this feature, you can quickly find out the students who are absent under a specific event.   
 
 Command:  `attendance sort`
@@ -1072,7 +1074,7 @@ The following occurs if there is no existing attendance list found under event `
       An empty list cannot be sorted      
 
 #### 4.4.6. Find attendance
-Find a student's attendance under a certain event. Using this feature, you will be able to quickly find the attendance
+Finds a student's attendance under a certain event. Using this feature, you will be able to quickly find the attendance
 of a specific student under an event. This feature will search through the attendance list to provide you with the 
 possible matches.
 
