@@ -17,11 +17,11 @@
 4.1. [Student List](#41-student)  
 4.1.1. [Add New Student List](#411-add-new-student-list)        
 4.1.2. [View Student List](#412-view-all-existing-student-lists-from-the-student-list-collection)  
-4.1.3. [Clear Student List Collection](#413-clear-all-existing-student-lists-from-the-student-list-collections)   
-4.1.4. [Delete Student List](#414-clear-all-existing-student-lists-from-the-student-list-collection)  
+4.1.3. [Clear Student List Collection](#413-clear-all-existing-student-lists-from-the-student-list-collection)   
+4.1.4. [Delete Student List](#414-delete-an-existing-student-list-from-the-student-list-collection)  
 4.1.5. [Find Student List](#415-find-existing-student-lists-from-the-student-list-collection)  
-4.1.6. [Sort Student List by Name](#416-sort-all-names-within-the-existing-student-lists-from-the-student-list-collection)  
-4.1.7. [Sort Student List by List](#417-sort-all-existing-student-lists-from-the-student-list-collection-by-name)  
+4.1.6. [Sort Student List by Name](#416-sort-existing-student-lists-in-the-student-list-collection-by-their-list-name)  
+4.1.7. [Sort Student List by List](#417-sort-student-name-found-in-student-lists)  
 4.2. [Event](#42-event)  
 4.2.1. [Add New Event](#421-add-new-event)  
 4.2.2. [View Event List](#422-list-events)  
@@ -95,7 +95,7 @@ e.g. typing help then pressing **Enter** will open the help window.
 Some example commands to try:
 * `event list`			List all events
 * `event add n/CS1010` 	Add an event named “CS1010”
-* `student add`         Create a new student list
+* `studentlist add`         Create a new student list
 * `bye`				    Exits the application
 
 Refer to [“Features”](#4-features) for details of each command.
@@ -103,9 +103,9 @@ Refer to [“Features”](#4-features) for details of each command.
 ## 4. Features 
 
 ### 4.1. Student List
-This section for student related commands is done in chronological order. Please follow the numbering to get
+This section for student list related commands is done in chronological order. Please follow the numbering to get
 a clearer understanding on how you can use the commands. Do note that the student list created are stored under
-a student list collection. 
+a student list collection. Student list collection is a collection of all student list created by PAC.
 
 #### 4.1.1. Add New Student List
 
@@ -113,11 +113,11 @@ Creates a student list and adds it to the student list collection, that can be u
 performance. 
 
 Please note the following points when you are using this feature:
-1. Users are NOT allowed to add in duplicated student names or duplicated student list names. 
+1. You are NOT allowed to add in duplicated student names or duplicated student list names. 
 1. student names and student list names are CASE-INSENSITIVE.
-    1. For example, you will not be able to add in `cs1010` if there is an existing `CS1010` found in the student
+    * For example, you will not be able to add in `cs1010` if there is an existing `CS1010` found in the student
     list collection
-
+1. You should NOT use numbers as names as it will affect other student list features such as `studentlist sort`. 
 
 Command: 
 
@@ -125,7 +125,7 @@ Command:
     
 Examples: 
 
-The following shows a successful case of adding a new student list.
+The following shows a successful case of adding a new student list. For instance, you can add in a student list named `CS2113T` with students named `John` and `Jodi`. 
 
     >>> studentlist add
     What is the name of your list?
@@ -149,7 +149,8 @@ The following shows a successful case of adding a new student list.
     | 2         |  Jodi                                                                              |
     |___________|____________________________________________________________________________________|
     
-The following will occur if there is already an existing student list with the same name. 
+The following will occur if there is already an existing student list with the **same list name**. The student list will not be
+created and if you wish to create the student list, you will need to retype the command `studentlist add`. For instance, you cannot add in `CS2113T tut` if there is a `CS2113T Tut` student list stored in student list collection.
 
     >>> studentlist add
     What is the name of your list?
@@ -157,8 +158,8 @@ The following will occur if there is already an existing student list with the s
     >>> CS2113T Tut
     There is already an existing list name!
     
-The following will occur if there is already an existing student list with the same name. The student list will not be
-created and if you wish to create the student list, you will need to retype the command `studentlist add`. 
+The following will occur if there is already an existing **duplicate student name**. The student list will not be
+created and if you wish to create the student list, you will need to retype the command `studentlist add`. For instance, you will not be allowed to create a student list with two students named `John Doe`. 
 
     >>> studentlist add
     What is the name of your list?
@@ -175,7 +176,8 @@ created and if you wish to create the student list, you will need to retype the 
 
     
 #### 4.1.2 View all existing student lists from the student list collection
-View all existing students lists from student list collection.
+
+Views all existing students lists from student list collection.
     
 Command: 
     
@@ -214,14 +216,14 @@ The following occurs when there is at least one existing student list in the stu
     | 4         |  Fiona                                                                             |
     |___________|____________________________________________________________________________________|
                 
-The following occurs when there are no existing student list in the student list collection.
+The following occurs when there are no existing student lists in the student list collection.
 
     >>> studentlist view
     There is no existing student list.              
                 
-#### 4.1.3 Clear all existing student lists from the student list collections
-Clear all existing student lists from the student list collection. This is a clear all command. If you wish to delete 
-a specific student list, please use the `studentlist delete` instead.
+#### 4.1.3 Clear all existing student lists from the student list collection
+
+Clear all existing student lists from the student list collection. This is a clear student list collection command. If you wish to delete a specific student list, please use the `studentlist delete` instead.
 
 Command: 
     
@@ -239,9 +241,10 @@ The following occurs when there are no existing student list in the student list
     >>> studentlist clear
     There is no existing student list.
         
-#### 4.1.4 Clear all existing student lists from the student list collection
-Delete a specific student list from the student list collection base on its index. If you wish to delete all student 
-lists in the student list collection, please use `studentlist clear` instead.
+#### 4.1.4 Delete an existing student list from the student list collection
+
+Deletes an existing student list from the student list collection base on its index. If you wish to delete all student 
+lists in the student list collection, please use `studentlist clear` instead. This feature only allows a single deletion at a time.
 
 Command: 
 
@@ -277,13 +280,13 @@ The following occurs when there is at least one existing student list in the stu
     |___________|____________________________________________________________________________________|
                 
                 
-The following occurs when there are no existing student list in the student list collection.
+The following occurs when there are no existing student lists in the student list collection.
 
     >>> studentlist delete
     There is no existing student list.               
     
 #### 4.1.5 Find existing student list(s) from the student list collection
-Find existing student list(s) from student list collection base on keyword.
+Finds existing student list(s) from student list collection base on keyword.
     
 Command: 
     
@@ -291,7 +294,7 @@ Command:
         
 Examples: 
 
-The following occurs when there are existing student list in the student list collection.
+The following occurs when there is at least one existing student list in the student list collection. For instance, you are looking for a student list that contains `CS`, you will need to *Enter* `studentlist find` followed by `CS`.  
     
     >>> studentlist find
     Displaying all student list: 
@@ -381,8 +384,8 @@ The following occurs when there are no existing student list in the student list
     >>> studentlist find
     There is no existing student list.        
 
-#### 4.1.6 Sort all names within the existing student lists from the student list collection
-Sort all existing student lists from the student list collection by name. Regardless whether the lists are 
+#### 4.1.6 Sort existing student lists in the student list collection by their list name
+Sorts all existing student lists in the student list collection by list name. Regardless whether the lists are 
 in order, this command will force all existing lists to be sorted by their list name within the student list collection.
 
 Command: 
@@ -391,7 +394,7 @@ Command:
         
 Examples:     
 
-The following occurs when there is at least one existing student list in the student list collection.
+The following occurs when there is at least one existing student list in the student list collection. For instance, the student list collection contains student lists named `CS2113T Tut` , `CS2040C`, `CG2028` will be sorted to `CG2028`,`CS2040C`,`CS2113T Tut`.
 
     >>> studentlist view
     _________________________________________________________________________________________________
@@ -458,9 +461,9 @@ The following occurs when there is at least one existing student list in the stu
     |___________|____________________________________________________________________________________|
     
     
-#### 4.1.7 Sort all existing student lists from the student list collection by name
-Sort all existing student lists from the student list collection by name. Regardless whether the lists are 
-in order, this command will force all existing lists to be sorted by their name.
+#### 4.1.7 Sort student name found in student lists
+Sorts student name found in all existing student lists in the student list collection. Regardless whether the lists are 
+in order, this command will force all existing lists to sort their students by their name.
 
 Command: 
     
@@ -468,7 +471,7 @@ Command:
         
 Examples:     
 
-The following occurs when there is at least one existing student list in the student list collection.
+The following occurs when there is at least one existing student list in the student list collection. Within each student list, the student names will be sorted alphabetically. For instance, the list named `CG2028` that contains students named `Ben`, `Robert`, `Sam`, `Fiona`, will be arranged to `Ben`, `Fiona`, `Robert`, `Sam`. 
     
     >>> studentlist view
     _________________________________________________________________________________________________
